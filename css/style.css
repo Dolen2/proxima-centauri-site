@@ -151,10 +151,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  min-height: calc(100vh - var(--nav-height));
-  padding: 4rem 2rem;
+  padding: 5rem 2rem 3rem;
 }
 
 .hero-subtitle {
@@ -194,7 +192,7 @@ main {
   gap: 3rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .hero-stat {
@@ -228,6 +226,7 @@ main {
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 2.5rem;
 }
 
 .hero-cta:hover {
@@ -631,12 +630,11 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
-  margin-top: 2rem;
+  margin-top: 0;
   max-width: var(--max-width);
-  padding: 0 2rem;
+  padding: 3rem 2rem 5rem;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 5rem;
 }
 
 .nav-card {
@@ -712,19 +710,43 @@ main {
     display: block;
   }
 
+  .hero {
+    padding: 3rem 1.5rem 2rem;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
 
-  .hero-stats {
-    gap: 1.5rem;
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .comparison {
-    grid-template-columns: 1fr;
+  .hero-stats {
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-stat .value {
+    font-size: 1.5rem;
+  }
+
+  .hero-cta {
+    margin-bottom: 2rem;
   }
 
   .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-cards {
+    padding: 2rem 1.5rem 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .comparison {
     grid-template-columns: 1fr;
   }
 }
@@ -740,6 +762,54 @@ main {
 
   .page-header {
     padding: 3rem 1rem 2rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem 1.5rem;
+    min-height: auto;
+  }
+
+  .hero-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-stat .value {
+    font-size: 1.3rem;
+  }
+
+  .hero-stat .label {
+    font-size: 0.68rem;
+  }
+
+  .hero-cta {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-cards {
+    padding: 1.5rem 1rem 3rem;
+    gap: 1rem;
+  }
+
+  .nav-card {
+    padding: 1.25rem;
   }
 }
 
@@ -771,7 +841,7 @@ main {
 /* ---------- Hero Star Visual ---------- */
 .hero-visual {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
