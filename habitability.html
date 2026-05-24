@@ -134,7 +134,7 @@
         <span class="eq">
           T<sub>eq</sub> = [0.722 &times; 1361 &times; (1 &minus; 0.3) /
           (4 &times; 5.67&times;10<sup>&minus;8</sup>)]<sup>1/4</sup>
-          &asymp; <strong>228 K</strong> (&minus;45&deg;C)
+          &asymp; <strong>235 K</strong> (&minus;38&deg;C)
         </span>
         <span class="eq-label">Equilibrium temperature of Proxima b (assuming Earth-like albedo)</span>
       </div>
@@ -144,7 +144,8 @@
         actual average surface temperature is 288 K (15&deg;C). The extra 33 K comes from
         the greenhouse effect of our atmosphere. If Proxima b has even a modest greenhouse
         atmosphere (CO<sub>2</sub>, H<sub>2</sub>O), its surface temperature could be pushed
-        above 273 K (0&deg;C), the freezing point of water.
+        above 273 K (0&deg;C), the freezing point of water. Proxima b would need roughly
+        38 K of greenhouse warming to reach 273 K, comparable to Earth's 33 K.
       </p>
 
       <div class="comparison">
@@ -155,8 +156,8 @@
         </div>
         <div class="comparison-item">
           <h4>Proxima b</h4>
-          <span class="big-number">228 K</span>
-          <p>Equilibrium temp (A = 0.3)<br>With 33 K greenhouse: 261 K (&minus;12&deg;C)</p>
+          <span class="big-number">235 K</span>
+          <p>Equilibrium temp (A = 0.3)<br>With 33 K greenhouse: 268 K (&minus;5&deg;C)</p>
         </div>
       </div>
 
@@ -197,25 +198,30 @@
       </div>
 
       <p>
-        For the conservative HZ limits (moist greenhouse inner edge, maximum greenhouse
-        outer edge), S<sub>inner</sub> &asymp; 1.107 S<sub>&oplus;</sub> and
-        S<sub>outer</sub> &asymp; 0.356 S<sub>&oplus;</sub>:
+        The critical detail is that S<sub>eff</sub> depends on the star's effective temperature,
+        not just its luminosity. Kopparapu et al. provide polynomial corrections to the solar
+        baseline values as a function of T<sub>eff</sub>. For Proxima at T<sub>eff</sub> = 3042 K,
+        these corrections shift the flux boundaries significantly compared to the solar values:
+        S<sub>inner</sub> &asymp; 0.85 S<sub>&oplus;</sub> (moist greenhouse) and
+        S<sub>outer</sub> &asymp; 0.24 S<sub>&oplus;</sub> (maximum greenhouse).
       </p>
 
       <div class="equation-block">
         <span class="eq">
-          d<sub>inner</sub> = &radic;(0.0017 / 1.107) &asymp; <strong>0.039 AU</strong>
+          d<sub>inner</sub> = &radic;(0.0017 / 0.85) &asymp; <strong>0.045 AU</strong>
           <br>
-          d<sub>outer</sub> = &radic;(0.0017 / 0.356) &asymp; <strong>0.069 AU</strong>
+          d<sub>outer</sub> = &radic;(0.0017 / 0.24) &asymp; <strong>0.084 AU</strong>
         </span>
-        <span class="eq-label">Conservative habitable zone of Proxima Centauri</span>
+        <span class="eq-label">Conservative habitable zone of Proxima Centauri (M-dwarf corrected)</span>
       </div>
 
       <p>
-        Proxima b orbits at 0.049 AU, comfortably within the conservative habitable
-        zone boundaries. Compared to the Sun's HZ (roughly 0.95&ndash;1.67 AU), Proxima's
-        habitable zone is about 20 times closer in, reflecting the enormous luminosity
-        difference between the two stars.
+        Proxima b orbits at 0.049 AU, within the conservative habitable zone but notably
+        close to the inner edge. It sits only 0.004 AU inside the moist greenhouse limit,
+        meaning even a modest increase in stellar luminosity or decrease in planetary albedo
+        could push it outside. Compared to the Sun's HZ (roughly 0.95&ndash;1.67 AU),
+        Proxima's habitable zone is about 20 times closer in, reflecting the enormous
+        luminosity difference between the two stars.
       </p>
 
       <div class="chart-container">
@@ -223,7 +229,7 @@
         <p class="chart-caption">
           Shaded bars show the HZ extent for each star on a linear scale. Diamonds mark
           actual planet positions. Proxima's entire
-          HZ spans just 0.03 AU.
+          HZ spans just 0.04 AU, and Proxima b sits near the inner edge.
         </p>
         <div id="hz-chart" class="plotly-chart"></div>
       </div>
@@ -412,7 +418,7 @@
             </tr>
             <tr>
               <td>Equilibrium temperature</td>
-              <td>228 K; needs ~45 K greenhouse to reach 273 K</td>
+              <td>235 K; needs ~38 K greenhouse to reach 273 K</td>
               <td class="text-green">Plausible</td>
             </tr>
             <tr>

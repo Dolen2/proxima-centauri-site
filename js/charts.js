@@ -199,8 +199,8 @@
       });
     });
 
-    const hzInner = 0.0423;
-    const hzOuter = 0.0816;
+    const hzInner = 0.045;
+    const hzOuter = 0.084;
     const hzTheta = [];
     const hzInnerX = [], hzInnerY = [], hzOuterX = [], hzOuterY = [];
     for (let i = 0; i <= 100; i++) {
@@ -285,8 +285,8 @@
       hovertemplate: 'Proxima Centauri<extra></extra>',
     });
 
-    const hzInner = 0.0423;
-    const hzOuter = 0.0816;
+    const hzInner = 0.045;
+    const hzOuter = 0.084;
     const hzInnerX = [], hzInnerY = [], hzOuterX = [], hzOuterY = [];
     for (let i = 0; i <= 100; i++) {
       const th = (2 * Math.PI * i) / 100;
@@ -437,14 +437,11 @@
     const el = document.getElementById('hz-chart');
     if (!el) return;
 
-    function hzBounds(L) {
-      var inner = Math.sqrt(L / 1.107);
-      var outer = Math.sqrt(L / 0.356);
-      return { inner: inner, outer: outer };
-    }
-
-    var sunHZ = hzBounds(1.0);
-    var proxHZ = hzBounds(0.0017);
+    // Kopparapu (2013) S_eff with T_eff-dependent corrections
+    // Sun (T_eff=5780): S_inner=1.107, S_outer=0.356
+    // Proxima (T_eff=3042): polynomial correction gives S_inner≈0.85, S_outer≈0.24
+    var sunHZ  = { inner: Math.sqrt(1.0 / 1.107),    outer: Math.sqrt(1.0 / 0.356) };
+    var proxHZ = { inner: Math.sqrt(0.0017 / 0.85),   outer: Math.sqrt(0.0017 / 0.24) };
 
     var sunY = 1;
     var proxY = 0;
@@ -497,7 +494,7 @@
         font: { color: '#e87979', size: 10 }, xanchor: 'center', showarrow: false },
 
       { x: 0.30, y: proxY + bh + 0.42,
-        text: '← Proxima\'s entire HZ fits in 0.03 AU',
+        text: '← Proxima\'s entire HZ fits in 0.04 AU',
         font: { color: 'rgba(255,255,255,0.4)', size: 11, family: 'Inter, sans-serif' },
         xanchor: 'left', showarrow: true,
         ax: -45, ay: 0, arrowcolor: 'rgba(255,255,255,0.2)', arrowwidth: 1, arrowhead: 2 },
