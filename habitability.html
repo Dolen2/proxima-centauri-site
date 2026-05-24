@@ -35,9 +35,9 @@
     <p class="overline">04 &mdash; Habitability Analysis</p>
     <h1>Could Life Survive on Proxima b?</h1>
     <p class="lead">
-      A quantitative analysis of the factors that determine whether Proxima b
-      could maintain conditions suitable for life, from equilibrium temperature
-      to tidal locking and atmospheric escape.
+      Equilibrium temperature, habitable zone position, tidal locking, and
+      atmospheric escape&mdash;the factors that determine whether Proxima b
+      could hold liquid water.
     </p>
   </header>
 
@@ -47,10 +47,8 @@
     <section class="section" id="insolation">
       <h2>1. How Much Light Does Proxima b Receive?</h2>
       <p>
-        The first step in assessing habitability is determining how much energy Proxima b
-        receives from its star. The <strong>insolation flux</strong> S measures the stellar
-        power per unit area at the planet's orbital distance. It depends on the star's
-        luminosity and the planet's distance:
+        The <strong>insolation flux</strong> S is the stellar power per unit area at the
+        planet's distance:
       </p>
 
       <div class="equation-block">
@@ -82,10 +80,8 @@
       </div>
 
       <p>
-        This is a promising result. Proxima b receives somewhat less stellar energy than
-        Earth, but more than Mars (which receives about 43% of Earth's insolation). In
-        terms of raw energy input, Proxima b sits comfortably in a range where liquid
-        water could exist on the surface, provided other conditions are met.
+        Proxima b receives less energy than Earth but more than Mars (~43%). In terms of
+        raw insolation, liquid surface water is plausible if other conditions are met.
       </p>
 
       <div class="chart-container">
@@ -103,9 +99,8 @@
     <section class="section" id="temperature">
       <h2>2. Equilibrium Temperature</h2>
       <p>
-        The <strong>equilibrium temperature</strong> T<sub>eq</sub> is the surface temperature
-        a planet would have if it were a simple blackbody, with no atmosphere, in thermal
-        balance with the incoming starlight. Energy absorbed equals energy radiated:
+        The <strong>equilibrium temperature</strong> T<sub>eq</sub> is the temperature of a
+        bare blackbody in thermal balance with the incoming starlight:
       </p>
 
       <div class="equation-block">
@@ -140,12 +135,10 @@
       </div>
 
       <p>
-        For comparison, Earth's equilibrium temperature is about 255 K (&minus;18&deg;C). Earth's
-        actual average surface temperature is 288 K (15&deg;C). The extra 33 K comes from
-        the greenhouse effect of our atmosphere. If Proxima b has even a modest greenhouse
-        atmosphere (CO<sub>2</sub>, H<sub>2</sub>O), its surface temperature could be pushed
-        above 273 K (0&deg;C), the freezing point of water. Proxima b would need roughly
-        38 K of greenhouse warming to reach 273 K, comparable to Earth's 33 K.
+        Earth's T<sub>eq</sub> is about 255 K; its actual surface temperature is 288 K,
+        the extra 33 K coming from the greenhouse effect. Proxima b would need roughly
+        38 K of greenhouse warming to reach 273 K (0&deg;C), comparable to Earth's 33 K.
+        A modest CO<sub>2</sub>/H<sub>2</sub>O atmosphere could supply this.
       </p>
 
       <div class="comparison">
@@ -162,11 +155,9 @@
       </div>
 
       <p>
-        The plot below shows how the equilibrium temperature varies with albedo for
-        both Earth and Proxima b. The green band marks the liquid water range
-        (273&ndash;373 K). Note that without a greenhouse effect, neither planet
-        reaches liquid water temperatures at moderate albedos. Atmospheres are
-        critical.
+        The plot below shows T<sub>eq</sub> vs. albedo for both planets. Without a
+        greenhouse effect, neither reaches liquid water temperatures at moderate
+        albedos.
       </p>
 
       <div class="chart-container">
@@ -183,10 +174,10 @@
     <section class="section" id="hz">
       <h2>3. Habitable Zone Boundaries</h2>
       <p>
-        The <strong>habitable zone</strong> (HZ) is the range of orbital distances around a star
-        where a rocky planet with an Earth-like atmosphere could sustain liquid surface water.
-        Using the empirical flux boundaries from Kopparapu et al.
-        (2013)<a href="references.html#kopparapu2013" class="cite">[9]</a>:
+        The <strong>habitable zone</strong> (HZ) is the distance range where a rocky planet
+        with an Earth-like atmosphere could sustain liquid surface water. Using the flux
+        boundaries from Kopparapu et al.
+        (2013)<a href="references.html#kopparapu2013" class="cite">[5]</a>:
       </p>
 
       <div class="equation-block">
@@ -216,12 +207,10 @@
       </div>
 
       <p>
-        Proxima b orbits at 0.049 AU, within the conservative habitable zone but notably
-        close to the inner edge. It sits only 0.004 AU inside the moist greenhouse limit,
-        meaning even a modest increase in stellar luminosity or decrease in planetary albedo
-        could push it outside. Compared to the Sun's HZ (roughly 0.95&ndash;1.67 AU),
-        Proxima's habitable zone is about 20 times closer in, reflecting the enormous
-        luminosity difference between the two stars.
+        Proxima b orbits at 0.049 AU&mdash;inside the conservative HZ but only 0.004 AU from
+        the inner edge. A modest increase in luminosity or decrease in albedo could push it
+        out. For comparison, the Sun's HZ spans roughly 0.95&ndash;1.67 AU, about 20 times
+        farther out.
       </p>
 
       <div class="chart-container">
@@ -255,14 +244,10 @@
     <section class="section" id="tidal-locking">
       <h2>4. Tidal Locking</h2>
       <p>
-        Because Proxima b orbits so close to its star (0.049 AU), tidal forces are extremely
-        strong. These forces act to slow the planet's rotation until one face permanently
-        points toward the star, a state called <strong>synchronous rotation</strong>
-        or <strong>tidal locking</strong>.
-      </p>
-      <p>
-        The timescale for a planet to become tidally locked can be estimated
-        as<a href="references.html#gladman1996" class="cite">[10]</a>:
+        At 0.049 AU, tidal forces on Proxima b are strong enough to slow its rotation
+        until one face permanently points toward the star (<strong>tidal locking</strong>).
+        The locking timescale can be estimated
+        as<a href="references.html#gladman1996" class="cite">[6]</a>:
       </p>
 
       <div class="equation-block">
@@ -274,10 +259,9 @@
       </div>
 
       <p>
-        Where C is a constant depending on the planet's internal rigidity and dissipation
-        factor Q, &omega;<sub>0</sub> is the initial spin rate, a is the semi-major axis,
-        and R<sub>p</sub> is the planet's radius. For an Earth-like planet at Proxima b's
-        distance:
+        Here C depends on rigidity and dissipation factor Q, &omega;<sub>0</sub> is the
+        initial spin rate, a the semi-major axis, and R<sub>p</sub> the planet radius.
+        For an Earth-like planet at Proxima b's distance:
       </p>
 
       <div class="equation-block">
@@ -291,27 +275,19 @@
       </div>
 
       <p>
-        The tidal locking timescale scales as a<sup>6</sup>, making it extraordinarily
-        sensitive to orbital distance. At 0.049 AU from a 0.12 M<sub>&odot;</sub> star,
-        the locking time is orders of magnitude shorter than the system age. Proxima b
-        very likely has a permanent dayside and a permanent nightside.
+        Since t<sub>lock</sub> scales as a<sup>6</sup>, the locking time at 0.049 AU is
+        orders of magnitude shorter than the system age. Proxima b almost certainly has
+        a permanent dayside and a permanent nightside.
       </p>
 
       <h3>Climate Implications</h3>
       <p>
-        Tidal locking was historically considered a death sentence for habitability: the
-        dayside would bake while the nightside froze, and the atmosphere might collapse as
-        gases condensed on the frigid far side. However, modern global circulation models
-        (GCMs) have shown this picture is too pessimistic. Even a modest atmosphere (a few
-        hundred millibars of CO<sub>2</sub> or N<sub>2</sub>) can transport enough heat from
-        the dayside to the nightside to prevent atmospheric collapse<a href="references.html#turbet2016" class="cite">[11]</a>.
-      </p>
-      <p>
-        On a tidally locked Proxima b with an ocean, models predict a ring-shaped region of
-        temperate climate near the substellar point, potentially with open water on the dayside
-        and ice caps on the nightside. If the planet has a thick enough atmosphere, wind
-        circulation can homogenize temperatures significantly, creating a more globally
-        temperate climate than simple intuition would suggest.
+        Tidal locking was once considered fatal to habitability, but global circulation
+        models (GCMs) show that even a few hundred millibars of CO<sub>2</sub> or
+        N<sub>2</sub> can transport enough heat to prevent atmospheric
+        collapse<a href="references.html#turbet2016" class="cite">[7]</a>.
+        Models of a tidally locked Proxima b with an ocean predict a temperate ring near
+        the substellar point, with open water on the dayside and ice caps on the nightside.
       </p>
     </section>
 
@@ -319,9 +295,8 @@
     <section class="section" id="atmospheric-escape">
       <h2>5. Atmospheric Escape</h2>
       <p>
-        Perhaps the greatest threat to Proxima b's habitability is
-        <strong>atmospheric erosion</strong> driven by the star's extreme ultraviolet
-        (XUV) radiation and frequent powerful flares.
+        The biggest threat to habitability is <strong>atmospheric erosion</strong> from
+        Proxima's extreme ultraviolet (XUV) radiation and frequent flares.
       </p>
 
       <div class="callout info">
@@ -340,9 +315,9 @@
 
       <h3>XUV-Driven Escape</h3>
       <p>
-        The dominant atmospheric loss mechanism for Proxima b is energy-limited hydrodynamic
-        escape, driven by XUV irradiation. The mass-loss rate can be estimated
-        as<a href="references.html#ribas2016" class="cite">[12]</a>:
+        The dominant loss mechanism is energy-limited hydrodynamic escape. The mass-loss
+        rate can be estimated
+        as<a href="references.html#ribas2016" class="cite">[8]</a>:
       </p>
 
       <div class="equation-block">
@@ -354,17 +329,10 @@
       </div>
 
       <p>
-        Where &epsilon; is a heating efficiency factor (~0.1&ndash;0.3) and
-        F<sub>XUV</sub> is the XUV flux at the planet's orbital distance. Proxima
-        Centauri's quiescent XUV luminosity is about 10<sup>27</sup> erg/s, and at
-        0.049 AU, the XUV flux hitting Proxima b is roughly 30&ndash;250 times
-        what Earth receives from the Sun<a href="references.html#ribas2016" class="cite">[12]</a>.
-      </p>
-
-      <p>
-        Plugging in Earth-like parameters (R<sub>p</sub> = R<sub>&oplus;</sub>,
-        M<sub>p</sub> = 1.07 M<sub>&oplus;</sub>) with an intermediate heating
-        efficiency &epsilon; = 0.15:
+        Here &epsilon; ~ 0.1&ndash;0.3 is the heating efficiency. Proxima's quiescent XUV
+        luminosity is ~10<sup>27</sup> erg/s; at 0.049 AU, the XUV flux on Proxima b is
+        30&ndash;250&times; Earth's<a href="references.html#ribas2016" class="cite">[8]</a>.
+        With Earth-like parameters and &epsilon; = 0.15:
       </p>
 
       <div class="equation-block">
@@ -375,21 +343,18 @@
       </div>
 
       <p>
-        Over the system's ~4.85 billion year lifetime, this corresponds to a total loss of
-        roughly 1&ndash;10 Earth ocean equivalents of hydrogen. Whether Proxima b retains any
-        atmosphere today depends on its initial volatile budget. If it formed
-        with a large reservoir of volatiles (as in the migration scenario), it may have weathered
-        the storm. If it formed dry, its atmosphere may have been stripped long ago.
+        Over 4.85 Gyr, this implies a total loss of 1&ndash;10 Earth ocean equivalents of
+        hydrogen. Whether any atmosphere survives depends on the initial volatile budget:
+        a planet that formed volatile-rich (migration scenario) may have weathered the
+        storm; one that formed dry may have been stripped long ago.
       </p>
 
       <h3>Flare Erosion</h3>
       <p>
-        Beyond quiescent XUV flux, Proxima's frequent superflares deliver additional bursts of
-        erosive radiation. During the extreme 2016 flare event, the UV flux briefly increased by
-        a factor of ~68<a href="references.html#howard2018" class="cite">[5]</a>. Models suggest
-        that the cumulative effect of such flares over billions of years could strip away tens of
-        millibars of atmospheric pressure per billion years, enough to remove an Earth-like
-        atmosphere if not replenished by outgassing.
+        Superflares add further erosion. The 2016 event raised UV flux by
+        ~68&times;<a href="references.html#howard2018" class="cite">[1]</a>. Cumulative flare
+        effects over billions of years could strip tens of millibars per Gyr, enough to
+        remove an Earth-like atmosphere if not replenished by outgassing.
       </p>
     </section>
 
@@ -397,8 +362,7 @@
     <section class="section" id="verdict">
       <h2>6. Putting It All Together</h2>
       <p>
-        So, could Proxima b be habitable? The quantitative analysis points to a planet in a
-        genuinely ambiguous state:
+        The quantitative picture is genuinely ambiguous:
       </p>
 
       <div class="data-table-wrapper">
@@ -446,12 +410,10 @@
       </div>
 
       <p>
-        The answer depends heavily on unknowns: Does Proxima b have a magnetic field? How
-        much volatile material did it begin with? Is there active volcanism replenishing
-        atmospheric gases? These questions cannot be resolved by calculation alone;
-        they require <strong>observations</strong>, which is where the
-        <a href="future.html" style="color: var(--accent);">next generation of telescopes</a>
-        comes in.
+        The answer hinges on unknowns: magnetic field strength, initial volatile budget,
+        and whether active volcanism replenishes atmospheric gases. Resolving these
+        requires <strong>observations</strong>&mdash;the subject of the
+        <a href="future.html" style="color: var(--accent);">next page</a>.
       </p>
 
       <div class="callout warning">

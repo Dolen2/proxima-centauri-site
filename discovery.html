@@ -46,19 +46,16 @@
     <section class="section" id="rv-method">
       <h2>The Radial Velocity Method</h2>
       <p>
-        A planet does not simply orbit its star. The star and planet both orbit their
-        common center of mass. For a system like Proxima Centauri b, the star is vastly more
-        massive than the planet, so the center of mass sits very close to the star's core. But
-        the star still moves. It traces a small circle (or ellipse) in response to the planet's
-        gravitational pull, producing a periodic shift in the wavelengths of light we receive
-        from it.
+        A planet does not simply orbit its star&mdash;both bodies orbit their common center
+        of mass. For Proxima b, the star is so much more massive that the center of mass
+        sits near the star's core. But the star still moves, tracing a small circle (or
+        ellipse) that produces a periodic shift in the wavelengths of light we receive.
       </p>
       <p>
-        When the star moves toward Earth, its light is <strong>blue-shifted</strong> (compressed
-        to shorter wavelengths). When it moves away, the light is <strong>red-shifted</strong>
-        (stretched to longer wavelengths). By measuring these tiny Doppler shifts with a
-        high-resolution spectrograph, astronomers can infer the presence of an orbiting planet,
-        determine its orbital period, and estimate its minimum mass.
+        When the star moves toward Earth, its light is <strong>blue-shifted</strong>;
+        when it moves away, the light is <strong>red-shifted</strong>. Measuring these
+        tiny Doppler shifts with a high-resolution spectrograph reveals the planet's
+        presence, orbital period, and minimum mass.
       </p>
 
       <div class="callout info">
@@ -104,18 +101,17 @@
       </ul>
 
       <p>
-        The critical limitation is the <strong>sin i</strong> degeneracy. Radial velocity
-        measurements only detect the component of the star's motion along our line of sight. If
-        we are viewing the orbit face-on (i = 0&deg;), there is no radial component at all and
-        the planet would be undetectable. If the orbit is edge-on (i = 90&deg;), we measure the
-        full amplitude. Since we typically do not know the inclination, the RV method gives us
-        only a <strong>minimum mass</strong>: m<sub>p</sub> sin i.
+        The critical limitation is the <strong>sin i</strong> degeneracy. RV only detects
+        the star's motion along our line of sight. A face-on orbit (i = 0&deg;) produces no
+        radial signal; an edge-on orbit (i = 90&deg;) gives the full amplitude. Without
+        knowing the inclination, RV yields only a <strong>minimum mass</strong>:
+        m<sub>p</sub> sin i.
       </p>
 
       <h3>Applying This to Proxima b</h3>
       <p>
         The original 2016 discovery measured a semi-amplitude of K &asymp; 1.38 m/s with a
-        period of P = 11.186 days<a href="references.html#anglada2016" class="cite">[6]</a>.
+        period of P = 11.186 days<a href="references.html#anglada2016" class="cite">[2]</a>.
         Using Proxima's mass of M<sub>&star;</sub> = 0.122 M<sub>&odot;</sub> and assuming
         a nearly circular orbit (e &asymp; 0.02), solving the RV equation gives:
       </p>
@@ -128,14 +124,10 @@
       </div>
 
       <p>
-        Subsequent observations with the higher-precision ESPRESSO spectrograph revised this
-        downward. Suárez Mascareño et al. (2020) measured a smaller semi-amplitude of
-        K &asymp; 1.20 m/s, yielding a refined minimum mass of
-        m<sub>p</sub> sin i &asymp; 1.07 M<sub>&oplus;</sub>, which is the currently
-        accepted value. Either way, Proxima b has roughly Earth's mass. If the orbit is
-        inclined at, say, 60&deg;, the true mass would be about 1.24 M<sub>&oplus;</sub>.
-        In essentially all realistic geometries, Proxima b is a rocky, terrestrial-class
-        planet.
+        ESPRESSO later revised this downward: K &asymp; 1.20 m/s, giving
+        m<sub>p</sub> sin i &asymp; 1.07 M<sub>&oplus;</sub> (the current accepted value).
+        At an inclination of 60&deg; the true mass would be about 1.24 M<sub>&oplus;</sub>.
+        In nearly all realistic geometries, Proxima b is a rocky, terrestrial-class planet.
       </p>
     </section>
 
@@ -200,7 +192,7 @@
           <p>
             Anglada-Escud&eacute; et al. publish the discovery in Nature: a planet with
             m sin i &asymp; 1.27 M<sub>&oplus;</sub>
-            orbiting in the habitable zone with P = 11.186 days<a href="references.html#anglada2016" class="cite">[6]</a>.
+            orbiting in the habitable zone with P = 11.186 days<a href="references.html#anglada2016" class="cite">[2]</a>.
             Later refined to ~1.07 M<sub>&oplus;</sub> by ESPRESSO.
           </p>
         </div>
@@ -209,7 +201,7 @@
           <h4>Proxima c confirmed</h4>
           <p>
             Damasso et al. report a second planet, Proxima c, with a minimum mass of about
-            7 M<sub>&oplus;</sub> and an orbital period of ~5.2 years<a href="references.html#damasso2020" class="cite">[7]</a>.
+            7 M<sub>&oplus;</sub> and an orbital period of ~5.2 years<a href="references.html#damasso2020" class="cite">[3]</a>.
           </p>
         </div>
         <div class="timeline-item">
@@ -218,7 +210,7 @@
           <p>
             Faria et al. announce Proxima d using ESPRESSO, a sub-Earth candidate with
             m sin i &asymp; 0.26 M<sub>&oplus;</sub> and an orbital period of just
-            5.12 days<a href="references.html#faria2022" class="cite">[8]</a>.
+            5.12 days<a href="references.html#faria2022" class="cite">[4]</a>.
           </p>
         </div>
       </div>
@@ -228,27 +220,23 @@
     <section class="section" id="challenges">
       <h2>Challenges of RV Around M-Dwarfs</h2>
       <p>
-        Detecting planets via radial velocity around a star like Proxima Centauri is not
-        straightforward. M-dwarfs present several observational challenges:
+        Detecting planets via RV around an M-dwarf like Proxima is difficult for
+        several reasons:
       </p>
       <p>
-        <strong>Stellar activity noise.</strong> Proxima's frequent flares and starspots create
-        spurious RV signals that can mimic or mask genuine planetary signals. Disentangling the
-        planet's Doppler signature from activity-induced jitter was one of the main difficulties
-        the Pale Red Dot team had to overcome. They used activity indicators (measurements
-        of chromospheric emission lines like H&alpha;) to model and subtract the stellar
-        noise from the data.
+        <strong>Stellar activity noise.</strong> Proxima's flares and starspots create
+        spurious RV signals that can mimic or mask a planet. The Pale Red Dot team used
+        chromospheric emission indicators (H&alpha;) to model and subtract this jitter.
       </p>
       <p>
-        <strong>Faintness.</strong> Even though Proxima is the closest star, its apparent magnitude
-        of 11.1 makes it invisible to the naked eye. Gathering enough photons for precise RV
-        measurements requires long exposures on large telescopes equipped with state-of-the-art
-        spectrographs like HARPS (High Accuracy Radial velocity Planet Searcher).
+        <strong>Faintness.</strong> At magnitude 11.1, Proxima requires long exposures on
+        large telescopes with spectrographs like HARPS to gather enough photons for
+        precise RV measurements.
       </p>
       <p>
-        <strong>Small signals.</strong> The 1.38 m/s semi-amplitude of Proxima b's signal is tiny
-        (roughly the walking speed of a tortoise). Measuring Doppler shifts at this level
-        demands sub-m/s instrumental precision sustained over months of observations.
+        <strong>Small signals.</strong> The ~1.3 m/s semi-amplitude is roughly the walking
+        speed of a tortoise. Measuring Doppler shifts this small demands sub-m/s precision
+        sustained over months.
       </p>
     </section>
 
