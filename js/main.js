@@ -93,24 +93,54 @@
 
   // ---------- Scroll Fade-in ----------
   function initScrollFade() {
-    const sections = document.querySelectorAll('.section, .card-grid, .chart-container, .comparison, .size-compare, .timeline, .facts-grid');
+    var sections = document.querySelectorAll('.section, .chart-container, .comparison, .size-compare, .timeline, .facts-grid, .planet-profile');
     if (!sections.length) return;
 
-    sections.forEach((s) => s.classList.add('fade-in'));
+    sections.forEach(function (s) {
+      // Make above-the-fold content visible immediately
+      var rect = s.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        s.classList.add('fade-in', 'visible');
+      } else {
+        s.classList.add('fade-in');
+      }
+    });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
           if (e.isIntersecting) {
             e.target.classList.add('visible');
             observer.unobserve(e.target);
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px 60px 0px' }
     );
 
-    sections.forEach((s) => observer.observe(s));
+    sections.forEach(function (s) {
+      if (!s.classList.contains('visible')) {
+        observer.observe(s);
+      }
+    });
+  }
+
+  // ---------- Smooth Page Transitions ----------
+  function initPageTransitions() {
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      // Only handle local .html links
+      if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto')) return;
+      if (e.metaKey || e.ctrlKey) return; // allow cmd/ctrl+click
+
+      e.preventDefault();
+      document.body.classList.add('page-exit');
+      setTimeout(function () {
+        window.location.href = href;
+      }, 180);
+    });
   }
 
   // ---------- Reading Progress Bar ----------
@@ -130,11 +160,12 @@
   }
 
   // ---------- Init ----------
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', function () {
     initStarfield();
     initNav();
     setActiveNav();
     initScrollFade();
     initProgressBar();
+    initPageTransitions();
   });
 })();
