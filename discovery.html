@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery | Proxima Centauri</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-progress"><div class="page-progress-bar"></div></div>
+
+<main>
+  <header class="page-header">
+    <p class="overline">02 &mdash; Discovery</p>
+    <h1>Finding the Planets</h1>
+    <p class="lead">
+      How a tiny periodic wobble in Proxima Centauri's motion revealed an Earth-mass
+      planet in the habitable zone, using the radial velocity method.
+    </p>
+  </header>
+
+  <div class="content">
+
+    <!-- Section: The RV Method -->
+    <section class="section" id="rv-method">
+      <h2>The Radial Velocity Method</h2>
+      <p>
+        A planet does not simply orbit its star. The star and planet both orbit their
+        common center of mass. For a system like Proxima Centauri b, the star is vastly more
+        massive than the planet, so the center of mass sits very close to the star's core. But
+        the star still moves. It traces a small circle (or ellipse) in response to the planet's
+        gravitational pull, producing a periodic shift in the wavelengths of light we receive
+        from it.
+      </p>
+      <p>
+        When the star moves toward Earth, its light is <strong>blue-shifted</strong> (compressed
+        to shorter wavelengths). When it moves away, the light is <strong>red-shifted</strong>
+        (stretched to longer wavelengths). By measuring these tiny Doppler shifts with a
+        high-resolution spectrograph, astronomers can infer the presence of an orbiting planet,
+        determine its orbital period, and estimate its minimum mass.
+      </p>
+
+      <div class="callout info">
+        <span class="callout-icon">&#9432;</span>
+        <div class="callout-body">
+          <strong>Lecture 6 &amp; 7 Connection &mdash; Radial Velocities</strong>
+          <p>
+            Lectures 6 and 7 introduced the radial velocity technique: the Doppler effect applied
+            to starlight, the concept of the center-of-mass velocity, and how the semi-amplitude K
+            relates to the planet's orbital parameters and minimum mass (m sin i). The discovery
+            of Proxima b is a textbook application of these principles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: The math -->
+    <section class="section" id="rv-math">
+      <h2>From Wobble to Mass</h2>
+      <p>
+        The radial velocity semi-amplitude K (the maximum speed of the star's wobble
+        toward or away from us) is related to the planet's properties by:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          K = (2&pi;G / P)<sup>1/3</sup> &middot;
+          (m<sub>p</sub> sin i) /
+          (M<sub>&star;</sub> + m<sub>p</sub>)<sup>2/3</sup> &middot;
+          1 / &radic;(1 &minus; e&sup2;)
+        </span>
+        <span class="eq-label">Radial velocity semi-amplitude</span>
+      </div>
+
+      <p>Where:</p>
+      <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.25rem; list-style: disc;">
+        <li><strong>K</strong> = radial velocity semi-amplitude (m/s)</li>
+        <li><strong>P</strong> = orbital period</li>
+        <li><strong>m<sub>p</sub> sin i</strong> = minimum planet mass (we only measure the component along our line of sight)</li>
+        <li><strong>M<sub>&star;</sub></strong> = stellar mass</li>
+        <li><strong>e</strong> = orbital eccentricity</li>
+        <li><strong>i</strong> = orbital inclination (unknown from RV alone)</li>
+      </ul>
+
+      <p>
+        The critical limitation is the <strong>sin i</strong> degeneracy. Radial velocity
+        measurements only detect the component of the star's motion along our line of sight. If
+        we are viewing the orbit face-on (i = 0&deg;), there is no radial component at all and
+        the planet would be undetectable. If the orbit is edge-on (i = 90&deg;), we measure the
+        full amplitude. Since we typically do not know the inclination, the RV method gives us
+        only a <strong>minimum mass</strong>: m<sub>p</sub> sin i.
+      </p>
+
+      <h3>Applying This to Proxima b</h3>
+      <p>
+        For Proxima b, the measured semi-amplitude is K &asymp; 1.38 m/s with a period of
+        P = 11.186 days<a href="references.html#anglada2016" class="cite">[6]</a>. Using Proxima's
+        mass of M<sub>&star;</sub> = 0.122 M<sub>&odot;</sub> and assuming a nearly circular orbit
+        (e &asymp; 0.02), we can solve for the minimum mass:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          m<sub>p</sub> sin i &asymp; 1.07 M<sub>&oplus;</sub>
+        </span>
+        <span class="eq-label">Minimum mass of Proxima b (essentially Earth-mass)</span>
+      </div>
+
+      <p>
+        This tells us Proxima b has at minimum about the same mass as Earth. If the orbit is
+        inclined at, say, 60&deg;, the true mass would be about 1.24 M<sub>&oplus;</sub>. Even
+        in the worst realistic cases, Proxima b is almost certainly a rocky, terrestrial-class
+        planet.
+      </p>
+    </section>
+
+    <!-- Section: Interactive RV Curve -->
+    <section class="section" id="rv-curve">
+      <h2>The Radial Velocity Signal</h2>
+      <p>
+        The plot below shows a simulated radial velocity curve for Proxima Centauri based on the
+        published orbital parameters of Proxima b. The sinusoidal pattern repeats every
+        11.186 days. Each data point represents a measurement of the star's line-of-sight
+        velocity, with realistic scatter to simulate observational noise. Hover over the plot to
+        explore the data.
+      </p>
+
+      <div class="chart-container">
+        <h4>Radial Velocity Curve of Proxima Centauri</h4>
+        <p class="chart-caption">
+          Simulated RV measurements phased to the 11.186-day orbital period of Proxima b.
+          Semi-amplitude K &asymp; 1.38 m/s. Error bars represent typical HARPS measurement
+          uncertainties (~0.5 m/s).
+        </p>
+        <div id="rv-chart" class="plotly-chart"></div>
+      </div>
+    </section>
+
+    <!-- Section: Discovery Timeline -->
+    <section class="section" id="timeline">
+      <h2>Discovery Timeline</h2>
+      <p>
+        The road to confirming Proxima b stretched over more than a decade of observations.
+        Here are the key milestones:
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <p class="year">1915</p>
+          <h4>Proxima Centauri discovered</h4>
+          <p>
+            Robert Innes identifies Proxima as the closest known star to the Sun based on its
+            large proper motion.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <p class="year">2000&ndash;2014</p>
+          <h4>Early RV hints</h4>
+          <p>
+            UVES and HARPS spectrographs accumulate radial velocity data on Proxima. A periodic
+            signal begins to emerge but lacks sufficient significance for a definitive claim.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <p class="year">2016 (January&ndash;March)</p>
+          <h4>Pale Red Dot campaign</h4>
+          <p>
+            A dedicated 60-night observing campaign with HARPS at La Silla Observatory targets
+            Proxima nightly, building up the signal-to-noise ratio needed for confirmation.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <p class="year">2016 (August 24)</p>
+          <h4>Proxima b announced</h4>
+          <p>
+            Anglada-Escud&eacute; et al. publish the discovery in Nature: a planet with
+            m sin i &asymp; 1.27 M<sub>&oplus;</sub> (later refined to ~1.07 M<sub>&oplus;</sub>)
+            orbiting in the habitable zone with P = 11.186 days<a href="references.html#anglada2016" class="cite">[6]</a>.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <p class="year">2020</p>
+          <h4>Proxima c confirmed</h4>
+          <p>
+            Damasso et al. report a second planet, Proxima c, with a minimum mass of about
+            7 M<sub>&oplus;</sub> and an orbital period of ~5.2 years<a href="references.html#damasso2020" class="cite">[7]</a>.
+          </p>
+        </div>
+        <div class="timeline-item">
+          <p class="year">2022</p>
+          <h4>Proxima d detected</h4>
+          <p>
+            Faria et al. announce Proxima d using ESPRESSO, a sub-Earth candidate with
+            m sin i &asymp; 0.26 M<sub>&oplus;</sub> and an orbital period of just
+            5.12 days<a href="references.html#faria2022" class="cite">[8]</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Challenges -->
+    <section class="section" id="challenges">
+      <h2>Challenges of RV Around M-Dwarfs</h2>
+      <p>
+        Detecting planets via radial velocity around a star like Proxima Centauri is not
+        straightforward. M-dwarfs present several observational challenges:
+      </p>
+      <p>
+        <strong>Stellar activity noise.</strong> Proxima's frequent flares and starspots create
+        spurious RV signals that can mimic or mask genuine planetary signals. Disentangling the
+        planet's Doppler signature from activity-induced jitter was one of the main difficulties
+        the Pale Red Dot team had to overcome. They used activity indicators (measurements
+        of chromospheric emission lines like H&alpha;) to model and subtract the stellar
+        noise from the data.
+      </p>
+      <p>
+        <strong>Faintness.</strong> Even though Proxima is the closest star, its apparent magnitude
+        of 11.1 makes it invisible to the naked eye. Gathering enough photons for precise RV
+        measurements requires long exposures on large telescopes equipped with state-of-the-art
+        spectrographs like HARPS (High Accuracy Radial velocity Planet Searcher).
+      </p>
+      <p>
+        <strong>Small signals.</strong> The 1.38 m/s semi-amplitude of Proxima b's signal is tiny
+        (roughly the walking speed of a tortoise). Measuring Doppler shifts at this level
+        demands sub-m/s instrumental precision sustained over months of observations.
+      </p>
+    </section>
+
+    <a href="planets.html" class="next-page">
+      <div>
+        <span class="next-label">Next</span>
+        <span class="next-title">The Planets &mdash; Proxima b, c &amp; d</span>
+      </div>
+      <span class="next-arrow">&rarr;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/charts.js"></script>
+</body>
+</html>

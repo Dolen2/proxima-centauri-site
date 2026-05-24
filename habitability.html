@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitability | Proxima Centauri</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-progress"><div class="page-progress-bar"></div></div>
+
+<main>
+  <header class="page-header">
+    <p class="overline">04 &mdash; Habitability Analysis</p>
+    <h1>Could Life Survive on Proxima b?</h1>
+    <p class="lead">
+      A quantitative analysis of the factors that determine whether Proxima b
+      could maintain conditions suitable for life, from equilibrium temperature
+      to tidal locking and atmospheric escape.
+    </p>
+  </header>
+
+  <div class="content">
+
+    <!-- Section 1: Insolation -->
+    <section class="section" id="insolation">
+      <h2>1. How Much Light Does Proxima b Receive?</h2>
+      <p>
+        The first step in assessing habitability is determining how much energy Proxima b
+        receives from its star. The <strong>insolation flux</strong> S measures the stellar
+        power per unit area at the planet's orbital distance. It depends on the star's
+        luminosity and the planet's distance:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">S = L<sub>&star;</sub> / (4&pi; d&sup2;)</span>
+        <span class="eq-label">Insolation flux (power per unit area at distance d)</span>
+      </div>
+
+      <p>
+        We can express this relative to Earth's insolation (S<sub>&oplus;</sub> = 1361 W/m&sup2;):
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          S / S<sub>&oplus;</sub> = (L<sub>&star;</sub> / L<sub>&odot;</sub>) &times;
+          (1 AU / d)<sup>2</sup>
+        </span>
+      </div>
+
+      <p>
+        For Proxima b, with L<sub>&star;</sub> = 0.0017 L<sub>&odot;</sub> and d = 0.0485 AU:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          S / S<sub>&oplus;</sub> = 0.0017 &times; (1 / 0.0485)&sup2;
+          = 0.0017 &times; 425.1 &asymp; <strong>0.722</strong>
+        </span>
+        <span class="eq-label">Proxima b receives about 72% of the sunlight Earth receives</span>
+      </div>
+
+      <p>
+        This is a promising result. Proxima b receives somewhat less stellar energy than
+        Earth, but more than Mars (which receives about 43% of Earth's insolation). In
+        terms of raw energy input, Proxima b sits comfortably in a range where liquid
+        water could exist on the surface, provided other conditions are met.
+      </p>
+
+      <div class="chart-container">
+        <h4>Insolation vs. Distance for the Sun and Proxima Centauri</h4>
+        <p class="chart-caption">
+          Stellar flux falls off as 1/d&sup2;. Despite Proxima being ~600&times; less
+          luminous than the Sun, Proxima b orbits so close that it receives
+          comparable insolation to Earth.
+        </p>
+        <div id="insolation-chart" class="plotly-chart"></div>
+      </div>
+    </section>
+
+    <!-- Section 2: Equilibrium Temperature -->
+    <section class="section" id="temperature">
+      <h2>2. Equilibrium Temperature</h2>
+      <p>
+        The <strong>equilibrium temperature</strong> T<sub>eq</sub> is the surface temperature
+        a planet would have if it were a simple blackbody, with no atmosphere, in thermal
+        balance with the incoming starlight. Energy absorbed equals energy radiated:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          &pi;R<sub>p</sub>&sup2; &middot; S &middot; (1 &minus; A)
+          = 4&pi;R<sub>p</sub>&sup2; &middot; &sigma; T<sub>eq</sub><sup>4</sup>
+        </span>
+        <span class="eq-label">Energy balance: absorbed starlight = radiated thermal emission</span>
+      </div>
+
+      <p>Solving for T<sub>eq</sub>:</p>
+
+      <div class="equation-block">
+        <span class="eq">
+          T<sub>eq</sub> = [S (1 &minus; A) / (4&sigma;)]<sup>1/4</sup>
+        </span>
+        <span class="eq-label">Equilibrium temperature formula</span>
+      </div>
+
+      <p>
+        Where A is the Bond albedo (fraction of incident light reflected). For Earth, A &asymp; 0.30.
+        Using this as a reference for Proxima b:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          T<sub>eq</sub> = [0.722 &times; 1361 &times; (1 &minus; 0.3) /
+          (4 &times; 5.67&times;10<sup>&minus;8</sup>)]<sup>1/4</sup>
+          &asymp; <strong>228 K</strong> (&minus;45&deg;C)
+        </span>
+        <span class="eq-label">Equilibrium temperature of Proxima b (assuming Earth-like albedo)</span>
+      </div>
+
+      <p>
+        For comparison, Earth's equilibrium temperature is about 255 K (&minus;18&deg;C). Earth's
+        actual average surface temperature is 288 K (15&deg;C). The extra 33 K comes from
+        the greenhouse effect of our atmosphere. If Proxima b has even a modest greenhouse
+        atmosphere (CO<sub>2</sub>, H<sub>2</sub>O), its surface temperature could be pushed
+        above 273 K (0&deg;C), the freezing point of water.
+      </p>
+
+      <div class="comparison">
+        <div class="comparison-item">
+          <h4>Earth</h4>
+          <span class="big-number" style="color: var(--accent-green);">255 K</span>
+          <p>Equilibrium temp (no atmosphere)<br>Actual surface: 288 K (+33 K greenhouse)</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Proxima b</h4>
+          <span class="big-number">228 K</span>
+          <p>Equilibrium temp (A = 0.3)<br>With 33 K greenhouse: 261 K (&minus;12&deg;C)</p>
+        </div>
+      </div>
+
+      <p>
+        The plot below shows how the equilibrium temperature varies with albedo for
+        both Earth and Proxima b. The green band marks the liquid water range
+        (273&ndash;373 K). Note that without a greenhouse effect, neither planet
+        reaches liquid water temperatures at moderate albedos. Atmospheres are
+        critical.
+      </p>
+
+      <div class="chart-container">
+        <h4>Equilibrium Temperature vs. Bond Albedo</h4>
+        <p class="chart-caption">
+          T<sub>eq</sub> for Earth and Proxima b as a function of albedo. Diamond markers
+          show A = 0.3 (Earth-like). Green band = liquid water range (273&ndash;373 K).
+        </p>
+        <div id="teq-chart" class="plotly-chart"></div>
+      </div>
+    </section>
+
+    <!-- Section 3: Habitable Zone -->
+    <section class="section" id="hz">
+      <h2>3. Habitable Zone Boundaries</h2>
+      <p>
+        The <strong>habitable zone</strong> (HZ) is the range of orbital distances around a star
+        where a rocky planet with an Earth-like atmosphere could sustain liquid surface water.
+        Using the empirical flux boundaries from Kopparapu et al.
+        (2013)<a href="references.html#kopparapu2013" class="cite">[9]</a>:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          d<sub>inner</sub> = &radic;(L<sub>&star;</sub> / S<sub>inner</sub>) ,&ensp;
+          d<sub>outer</sub> = &radic;(L<sub>&star;</sub> / S<sub>outer</sub>)
+        </span>
+        <span class="eq-label">HZ boundaries in AU</span>
+      </div>
+
+      <p>
+        For the conservative HZ limits (moist greenhouse inner edge, maximum greenhouse
+        outer edge), S<sub>inner</sub> &asymp; 1.107 S<sub>&oplus;</sub> and
+        S<sub>outer</sub> &asymp; 0.356 S<sub>&oplus;</sub>:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          d<sub>inner</sub> = &radic;(0.0017 / 1.107) &asymp; <strong>0.039 AU</strong>
+          <br>
+          d<sub>outer</sub> = &radic;(0.0017 / 0.356) &asymp; <strong>0.069 AU</strong>
+        </span>
+        <span class="eq-label">Conservative habitable zone of Proxima Centauri</span>
+      </div>
+
+      <p>
+        Proxima b orbits at 0.049 AU, comfortably within the conservative habitable
+        zone boundaries. Compared to the Sun's HZ (roughly 0.95&ndash;1.67 AU), Proxima's
+        habitable zone is about 20 times closer in, reflecting the enormous luminosity
+        difference between the two stars.
+      </p>
+
+      <div class="chart-container">
+        <h4>Habitable Zone Comparison: Sun vs. Proxima Centauri</h4>
+        <p class="chart-caption">
+          Shaded bars show the HZ extent for each star on a linear scale. Diamonds mark
+          actual planet positions. Proxima's entire
+          HZ spans just 0.03 AU.
+        </p>
+        <div id="hz-chart" class="plotly-chart"></div>
+      </div>
+
+      <div class="callout info">
+        <span class="callout-icon">&#9432;</span>
+        <div class="callout-body">
+          <strong>Lecture 17 Connection &mdash; Habitability and Biosignatures</strong>
+          <p>
+            Lecture 17 defined the habitable zone and explored the many factors beyond
+            simple insolation that contribute to true habitability: atmospheric composition,
+            magnetic fields, stellar activity, tidal effects, and geological activity. The
+            habitable zone is a necessary but not sufficient condition for life. Proxima b
+            meets the insolation criterion, but the challenges described below
+            (tidal locking, flare exposure, and atmospheric escape) show why being
+            "in the HZ" does not guarantee habitability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Tidal Locking -->
+    <section class="section" id="tidal-locking">
+      <h2>4. Tidal Locking</h2>
+      <p>
+        Because Proxima b orbits so close to its star (0.049 AU), tidal forces are extremely
+        strong. These forces act to slow the planet's rotation until one face permanently
+        points toward the star, a state called <strong>synchronous rotation</strong>
+        or <strong>tidal locking</strong>.
+      </p>
+      <p>
+        The timescale for a planet to become tidally locked can be estimated
+        as<a href="references.html#gladman1996" class="cite">[10]</a>:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          t<sub>lock</sub> &asymp; (C &middot; &omega;<sub>0</sub> &middot; a<sup>6</sup>)
+          / (G M<sub>&star;</sub>&sup2; R<sub>p</sub><sup>3</sup>)
+        </span>
+        <span class="eq-label">Approximate tidal locking timescale</span>
+      </div>
+
+      <p>
+        Where C is a constant depending on the planet's internal rigidity and dissipation
+        factor Q, &omega;<sub>0</sub> is the initial spin rate, a is the semi-major axis,
+        and R<sub>p</sub> is the planet's radius. For an Earth-like planet at Proxima b's
+        distance:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          t<sub>lock</sub> &sim; 10<sup>8</sup>&ndash;10<sup>9</sup> years
+        </span>
+        <span class="eq-label">
+          Much shorter than the system's age (~4.85 Gyr). Proxima b is almost
+          certainly tidally locked
+        </span>
+      </div>
+
+      <p>
+        The tidal locking timescale scales as a<sup>6</sup>, making it extraordinarily
+        sensitive to orbital distance. At 0.049 AU from a 0.12 M<sub>&odot;</sub> star,
+        the locking time is orders of magnitude shorter than the system age. Proxima b
+        very likely has a permanent dayside and a permanent nightside.
+      </p>
+
+      <h3>Climate Implications</h3>
+      <p>
+        Tidal locking was historically considered a death sentence for habitability: the
+        dayside would bake while the nightside froze, and the atmosphere might collapse as
+        gases condensed on the frigid far side. However, modern global circulation models
+        (GCMs) have shown this picture is too pessimistic. Even a modest atmosphere (a few
+        hundred millibars of CO<sub>2</sub> or N<sub>2</sub>) can transport enough heat from
+        the dayside to the nightside to prevent atmospheric collapse<a href="references.html#turbet2016" class="cite">[11]</a>.
+      </p>
+      <p>
+        On a tidally locked Proxima b with an ocean, models predict a ring-shaped region of
+        temperate climate near the substellar point, potentially with open water on the dayside
+        and ice caps on the nightside. If the planet has a thick enough atmosphere, wind
+        circulation can homogenize temperatures significantly, creating a more globally
+        temperate climate than simple intuition would suggest.
+      </p>
+    </section>
+
+    <!-- Section 5: Atmospheric Escape -->
+    <section class="section" id="atmospheric-escape">
+      <h2>5. Atmospheric Escape</h2>
+      <p>
+        Perhaps the greatest threat to Proxima b's habitability is
+        <strong>atmospheric erosion</strong> driven by the star's extreme ultraviolet
+        (XUV) radiation and frequent powerful flares.
+      </p>
+
+      <div class="callout info">
+        <span class="callout-icon">&#9432;</span>
+        <div class="callout-body">
+          <strong>Lecture 16 Connection &mdash; Planet Atmospheres</strong>
+          <p>
+            In Lecture 16 we studied how planetary atmospheres are structured and how they can
+            be lost: thermal (Jeans) escape for light molecules at the exobase, hydrodynamic
+            escape when XUV heating drives bulk outflow, and non-thermal processes like ion
+            sputtering from stellar wind interactions. Proxima b is subject to all of these
+            mechanisms at elevated rates due to its star's extreme activity.
+          </p>
+        </div>
+      </div>
+
+      <h3>XUV-Driven Escape</h3>
+      <p>
+        The dominant atmospheric loss mechanism for Proxima b is energy-limited hydrodynamic
+        escape, driven by XUV irradiation. The mass-loss rate can be estimated
+        as<a href="references.html#ribas2016" class="cite">[12]</a>:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          dM/dt = (&epsilon; &middot; &pi; R<sub>p</sub>&sup2; &middot;
+          F<sub>XUV</sub>) / (G M<sub>p</sub> / R<sub>p</sub>)
+        </span>
+        <span class="eq-label">Energy-limited mass loss rate</span>
+      </div>
+
+      <p>
+        Where &epsilon; is a heating efficiency factor (~0.1&ndash;0.3) and
+        F<sub>XUV</sub> is the XUV flux at the planet's orbital distance. Proxima
+        Centauri's quiescent XUV luminosity is about 10<sup>27</sup> erg/s, and at
+        0.049 AU, the XUV flux hitting Proxima b is roughly 30&ndash;250 times
+        what Earth receives from the Sun<a href="references.html#ribas2016" class="cite">[12]</a>.
+      </p>
+
+      <p>
+        Plugging in Earth-like parameters (R<sub>p</sub> = R<sub>&oplus;</sub>,
+        M<sub>p</sub> = 1.07 M<sub>&oplus;</sub>) with an intermediate heating
+        efficiency &epsilon; = 0.15:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          dM/dt &sim; 10<sup>7</sup>&ndash;10<sup>8</sup> g/s
+        </span>
+        <span class="eq-label">Estimated atmospheric mass loss rate for Proxima b</span>
+      </div>
+
+      <p>
+        Over the system's ~4.85 billion year lifetime, this corresponds to a total loss of
+        roughly 1&ndash;10 Earth ocean equivalents of hydrogen. Whether Proxima b retains any
+        atmosphere today depends on its initial volatile budget. If it formed
+        with a large reservoir of volatiles (as in the migration scenario), it may have weathered
+        the storm. If it formed dry, its atmosphere may have been stripped long ago.
+      </p>
+
+      <h3>Flare Erosion</h3>
+      <p>
+        Beyond quiescent XUV flux, Proxima's frequent superflares deliver additional bursts of
+        erosive radiation. During the extreme 2016 flare event, the UV flux briefly increased by
+        a factor of ~68<a href="references.html#howard2018" class="cite">[5]</a>. Models suggest
+        that the cumulative effect of such flares over billions of years could strip away tens of
+        millibars of atmospheric pressure per billion years, enough to remove an Earth-like
+        atmosphere if not replenished by outgassing.
+      </p>
+    </section>
+
+    <!-- Section 6: The Verdict -->
+    <section class="section" id="verdict">
+      <h2>6. Putting It All Together</h2>
+      <p>
+        So, could Proxima b be habitable? The quantitative analysis points to a planet in a
+        genuinely ambiguous state:
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>Assessment</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Insolation flux</td>
+              <td>72% of Earth's, within range for liquid water</td>
+              <td class="text-green">Favorable</td>
+            </tr>
+            <tr>
+              <td>Equilibrium temperature</td>
+              <td>228 K; needs ~45 K greenhouse to reach 273 K</td>
+              <td class="text-green">Plausible</td>
+            </tr>
+            <tr>
+              <td>Habitable zone position</td>
+              <td>Within conservative HZ boundaries</td>
+              <td class="text-green">Favorable</td>
+            </tr>
+            <tr>
+              <td>Tidal locking</td>
+              <td>Almost certainly locked, but GCMs show heat transport can prevent collapse</td>
+              <td class="text-warm">Mixed</td>
+            </tr>
+            <tr>
+              <td>Atmospheric escape</td>
+              <td>Severe XUV + flare erosion; 1&ndash;10 oceans of H lost over 4.85 Gyr</td>
+              <td class="text-accent-red" style="color: var(--accent-red);">Challenging</td>
+            </tr>
+            <tr>
+              <td>Magnetic field</td>
+              <td>Unknown; would help shield atmosphere from stellar wind</td>
+              <td class="text-warm">Unknown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The answer depends heavily on unknowns: Does Proxima b have a magnetic field? How
+        much volatile material did it begin with? Is there active volcanism replenishing
+        atmospheric gases? These questions cannot be resolved by calculation alone;
+        they require <strong>observations</strong>, which is where the
+        <a href="future.html" style="color: var(--accent);">next generation of telescopes</a>
+        comes in.
+      </p>
+
+      <div class="callout warning">
+        <span class="callout-icon">&#9888;</span>
+        <div class="callout-body">
+          <strong>Key Insight</strong>
+          <p>
+            Being in the habitable zone is necessary but not sufficient. Proxima b passes the
+            insolation test, but the interplay of tidal locking, stellar flares, and atmospheric
+            escape makes the outcome genuinely uncertain. This is precisely why Proxima b is such
+            a compelling target for future observations. It represents a real test case for
+            the limits of habitability around the most common type of star in the galaxy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <a href="future.html" class="next-page">
+      <div>
+        <span class="next-label">Next</span>
+        <span class="next-title">The Future &mdash; What Comes Next</span>
+      </div>
+      <span class="next-arrow">&rarr;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/charts.js"></script>
+</body>
+</html>

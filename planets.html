@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Planets | Proxima Centauri</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-progress"><div class="page-progress-bar"></div></div>
+
+<main>
+  <header class="page-header">
+    <p class="overline">03 &mdash; The Planets</p>
+    <h1>Proxima b, c &amp; d</h1>
+    <p class="lead">
+      Three worlds orbiting a single red dwarf, from a sub-Earth whipping around
+      in 5 days to a cold super-Earth far beyond the snow line.
+    </p>
+  </header>
+
+  <div class="content">
+
+    <!-- Planet Overview Table -->
+    <section class="section" id="overview">
+      <h2>System at a Glance</h2>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Proxima d</th>
+              <th>Proxima b</th>
+              <th>Proxima c</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Discovery Year</td>
+              <td class="num">2022</td>
+              <td class="num">2016</td>
+              <td class="num">2020</td>
+            </tr>
+            <tr>
+              <td>Min. Mass (m sin i)</td>
+              <td class="num">0.26 M<sub>&oplus;</sub></td>
+              <td class="num">1.07 M<sub>&oplus;</sub></td>
+              <td class="num">~7 M<sub>&oplus;</sub></td>
+            </tr>
+            <tr>
+              <td>Orbital Period</td>
+              <td class="num">5.12 days</td>
+              <td class="num">11.186 days</td>
+              <td class="num">~1,928 days (~5.28 yr)</td>
+            </tr>
+            <tr>
+              <td>Semi-major Axis</td>
+              <td class="num">0.029 AU</td>
+              <td class="num">0.049 AU</td>
+              <td class="num">1.49 AU</td>
+            </tr>
+            <tr>
+              <td>Eccentricity</td>
+              <td class="num">~0.04</td>
+              <td class="num">~0.02</td>
+              <td class="num">~0.04</td>
+            </tr>
+            <tr>
+              <td>Detection Method</td>
+              <td>Radial Velocity (ESPRESSO)</td>
+              <td>Radial Velocity (HARPS)</td>
+              <td>Radial Velocity + Astrometry</td>
+            </tr>
+            <tr>
+              <td>In Habitable Zone?</td>
+              <td class="text-warm">No (too hot)</td>
+              <td class="text-green">Yes</td>
+              <td class="text-warm">No (too cold)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted" style="font-size:0.82rem;">
+        Data: Anglada-Escud&eacute; et al. (2016), Damasso et al. (2020), Faria et al. (2022),
+        Suarez Mascare&ntilde;o et al. (2020).
+      </p>
+    </section>
+
+    <!-- Planet Profiles -->
+    <section class="section" id="profiles">
+      <h2>Planet Profiles</h2>
+      <p>
+        Estimated radii use the mass-radius relation R &prop; M<sup>0.27</sup> for rocky
+        planets and R &prop; M<sup>0.55</sup> for volatile-rich worlds. Earth is shown for
+        scale.
+      </p>
+
+      <div class="planet-profiles">
+
+        <div class="planet-profile">
+          <div class="planet-visual">
+            <div class="planet-sphere planet-d"></div>
+            <span class="planet-radius">~0.71 R<sub>&oplus;</sub></span>
+          </div>
+          <div class="planet-info">
+            <div class="planet-header">
+              <span class="card-tag">Innermost</span>
+              <h3>Proxima d</h3>
+            </div>
+            <div class="planet-stats">
+              <span>0.26 M<sub>&oplus;</sub></span>
+              <span>P = 5.12 d</span>
+              <span>a = 0.029 AU</span>
+            </div>
+            <p>
+              The lightest known planet in the system, roughly twice the mass of Mars.
+              Proxima d orbits in only 5.12 days at 0.029 AU, well inside the inner edge
+              of the habitable zone. At this proximity it receives about 2&times; the flux
+              Earth gets from the Sun, making it likely too hot for surface liquid water.
+              Its detection required the precision of the ESPRESSO spectrograph on ESO's
+              VLT, which measured an RV semi-amplitude of just
+              0.39 m/s<a href="references.html#faria2022" class="cite">[8]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="planet-profile planet-profile--highlight">
+          <div class="planet-visual">
+            <div class="planet-sphere planet-b"></div>
+            <span class="planet-radius">~1.03 R<sub>&oplus;</sub></span>
+          </div>
+          <div class="planet-info">
+            <div class="planet-header">
+              <span class="card-tag">Habitable Zone</span>
+              <h3>Proxima b</h3>
+            </div>
+            <div class="planet-stats">
+              <span>1.07 M<sub>&oplus;</sub></span>
+              <span>P = 11.186 d</span>
+              <span>a = 0.049 AU</span>
+            </div>
+            <p>
+              The flagship world of the system. With a minimum mass of
+              1.07 M<sub>&oplus;</sub>, Proxima b is the closest known exoplanet to
+              Earth in both distance and size. It orbits at 0.049 AU, placing it within
+              Proxima's habitable zone. Questions remain about whether it can retain an
+              atmosphere against Proxima's intense flare activity, and whether tidal
+              locking creates extreme climate conditions. These are explored on the
+              <a href="habitability.html" style="color: var(--accent);">Habitability</a> page.
+            </p>
+          </div>
+        </div>
+
+        <div class="planet-profile">
+          <div class="planet-visual">
+            <div class="planet-sphere planet-c"></div>
+            <span class="planet-radius">~2.2 R<sub>&oplus;</sub></span>
+          </div>
+          <div class="planet-info">
+            <div class="planet-header">
+              <span class="card-tag">Outermost</span>
+              <h3>Proxima c</h3>
+            </div>
+            <div class="planet-stats">
+              <span>~7 M<sub>&oplus;</sub></span>
+              <span>P &asymp; 5.28 yr</span>
+              <span>a = 1.49 AU</span>
+            </div>
+            <p>
+              A super-Earth or mini-Neptune with a minimum mass around
+              7 M<sub>&oplus;</sub>, orbiting at 1.49 AU. This places Proxima c far
+              beyond the habitable zone where temperatures are extremely cold
+              (equilibrium temperature roughly 40 K). Its detection combined radial
+              velocity data with astrometric measurements from Gaia, and there is
+              tentative evidence from direct imaging that it may have a substantial ring
+              or dust system<a href="references.html#damasso2020" class="cite">[7]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="planet-scale-ref">
+          <div class="planet-sphere planet-earth-ref"></div>
+          <span class="planet-radius">Earth (1.0 R<sub>&oplus;</sub>)</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Orbital Diagram -->
+    <section class="section" id="orbits">
+      <h2>Orbital Architecture</h2>
+      <p>
+        The Proxima system's architecture is extremely compact compared to our Solar System.
+        Proxima b and d orbit closer to their star than Mercury orbits the Sun (0.387 AU). The
+        entire inner system fits within a region smaller than 0.05 AU. Only Proxima c, at 1.49 AU,
+        orbits at a distance comparable to Mars in our Solar System (1.52 AU), but around a
+        star that is roughly 600 times fainter.
+      </p>
+
+      <div class="chart-container">
+        <h4>Inner System: Proxima d &amp; b</h4>
+        <p class="chart-caption">
+          The inner two planets and the habitable zone (green band), with Mercury's orbit
+          overlaid for scale. Both Proxima planets orbit well inside Mercury's distance from the Sun.
+        </p>
+        <div id="inner-system-chart" class="plotly-chart"></div>
+      </div>
+
+      <div class="chart-container">
+        <h4>Full System: All Three Planets</h4>
+        <p class="chart-caption">
+          The complete Proxima system. Proxima c's orbit at 1.49 AU dwarfs the inner
+          planets. Pan and zoom to explore the full scale.
+        </p>
+        <div id="orbital-chart" class="plotly-chart"></div>
+      </div>
+    </section>
+
+    <!-- Kepler verification -->
+    <section class="section" id="kepler">
+      <h2>Verifying with Kepler's Third Law</h2>
+      <p>
+        We can check the consistency of the published orbital parameters using Kepler's
+        Third Law, which relates orbital period P, semi-major axis a, and stellar mass M<sub>&star;</sub>:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">P&sup2; = (4&pi;&sup2; / G M<sub>&star;</sub>) &middot; a&sup3;</span>
+        <span class="eq-label">Kepler's Third Law (planet mass negligible)</span>
+      </div>
+
+      <p>
+        Rearranging to solve for the semi-major axis given the measured period and
+        Proxima's mass (M<sub>&star;</sub> = 0.122 M<sub>&odot;</sub>):
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">a = (G M<sub>&star;</sub> P&sup2; / 4&pi;&sup2;)<sup>1/3</sup></span>
+      </div>
+
+      <p>For Proxima b with P = 11.186 days = 9.665 &times; 10<sup>5</sup> s:</p>
+
+      <div class="equation-block">
+        <span class="eq">
+          a = (6.674&times;10<sup>&minus;11</sup> &middot; 2.426&times;10<sup>29</sup>
+          &middot; (9.665&times;10<sup>5</sup>)&sup2; / 4&pi;&sup2;)<sup>1/3</sup>
+          &asymp; 7.25 &times; 10<sup>9</sup> m &asymp; 0.0485 AU
+        </span>
+        <span class="eq-label">Matches the published semi-major axis precisely</span>
+      </div>
+
+      <p>
+        This confirms internal consistency: the published period and semi-major axis are
+        exactly related by Newtonian gravity for Proxima's measured mass. The same check
+        works for Proxima d and c.
+      </p>
+
+      <div class="callout info">
+        <span class="callout-icon">&#9432;</span>
+        <div class="callout-body">
+          <strong>Lecture 14 Connection &mdash; Planet Formation</strong>
+          <p>
+            In Lecture 14 we studied the nebular hypothesis: how planets form from a
+            protoplanetary disk of gas and dust through core accretion and gravitational
+            collapse. Forming rocky planets around M-dwarfs presents unique challenges.
+            The protoplanetary disks of low-mass stars contain less total material, and
+            the snow line sits much closer to the star. Simulations suggest that forming
+            an Earth-mass planet like Proxima b at 0.05 AU may require significant inward
+            migration from a formation site further out in the disk, where more solid
+            material was available.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formation Context -->
+    <section class="section" id="formation">
+      <h2>How Did These Planets Form?</h2>
+      <p>
+        The formation of the Proxima system is an active area of theoretical study. The
+        standard core accretion model predicts that rocky planets grow by accumulating
+        solid material: first micron-sized dust grains collide and stick, building
+        up to kilometer-sized planetesimals, which then gravitationally attract more
+        material to become protoplanets.
+      </p>
+      <p>
+        Around a star as small as Proxima Centauri, the protoplanetary disk likely contained
+        only about 1&ndash;10% of the solid mass found in a Solar-type disk. This makes
+        forming massive planets in situ more difficult, and suggests two possible formation
+        scenarios for Proxima b:
+      </p>
+      <p>
+        <strong>In-situ formation with enhanced solids:</strong> If Proxima's disk had a
+        higher-than-average dust-to-gas ratio (consistent with Proxima's slightly super-solar
+        metallicity of [Fe/H] = +0.21), enough solid material may have been present in the
+        inner disk to build a 1 M<sub>&oplus;</sub> planet locally.
+      </p>
+      <p>
+        <strong>Formation further out and migration inward:</strong> Proxima b may have formed
+        beyond the snow line (where water ice boosted the available solid mass) and migrated inward
+        through gravitational interactions with the gas disk or with other forming planets. If this
+        occurred, Proxima b could be volatile-rich, potentially harboring a significant
+        water reservoir beneath (or instead of) a rocky surface.
+      </p>
+      <p>
+        The outer planet Proxima c, with its minimum mass of ~7 M<sub>&oplus;</sub> at 1.49 AU,
+        may have formed near or beyond the snow line through a combination of core accretion
+        and pebble accretion, rapidly sweeping up centimeter-sized pebbles drifting
+        inward through the disk.
+      </p>
+    </section>
+
+    <a href="habitability.html" class="next-page">
+      <div>
+        <span class="next-label">Next</span>
+        <span class="next-title">Habitability &mdash; Could Life Survive on Proxima b?</span>
+      </div>
+      <span class="next-arrow">&rarr;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/charts.js"></script>
+</body>
+</html>

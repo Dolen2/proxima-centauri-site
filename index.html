@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxima Centauri System | Our Nearest Exoplanetary Neighbors</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-subtitle">4.24 light-years away</p>
+    <h1>The <em>Proxima Centauri</em> Planetary System</h1>
+    <p class="hero-description">
+      The nearest known exoplanetary system to Earth, hosting at least two confirmed worlds
+      including one rocky planet sitting in the habitable zone of our closest stellar neighbor.
+    </p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="value">4.24</span>
+        <span class="label">Light-years</span>
+      </div>
+      <div class="hero-stat">
+        <span class="value">3</span>
+        <span class="label">Known planets</span>
+      </div>
+      <div class="hero-stat">
+        <span class="value">0.12 M<sub>&#9737;</sub></span>
+        <span class="label">Stellar mass</span>
+      </div>
+      <div class="hero-stat">
+        <span class="value">~1.07 M<sub>&#8853;</sub></span>
+        <span class="label">Proxima b mass</span>
+      </div>
+    </div>
+
+    <a href="star.html" class="hero-cta">
+      Begin Exploring &rarr;
+    </a>
+
+    <!-- Animated orbit visual -->
+    <div class="hero-visual">
+      <div class="planet-orbit-visual">
+        <div class="star-glow" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:24px;height:24px;"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring"></div>
+        <div class="orbit-planet planet-d"></div>
+        <div class="orbit-planet planet-b"></div>
+        <div class="orbit-planet planet-c"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Cards -->
+  <div class="nav-cards">
+    <a href="star.html" class="nav-card">
+      <span class="card-num">01 &mdash; The Star</span>
+      <h3>Proxima Centauri</h3>
+      <p>
+        A tiny red dwarf just 4.24 light-years away, the closest star to our Sun.
+        How its properties shape the worlds that orbit it.
+      </p>
+      <span class="card-arrow">Explore &rarr;</span>
+    </a>
+
+    <a href="discovery.html" class="nav-card">
+      <span class="card-num">02 &mdash; Discovery</span>
+      <h3>Finding the Planets</h3>
+      <p>
+        How the radial velocity method revealed Proxima b in 2016 and
+        what the wobble of a star can tell us about invisible companions.
+      </p>
+      <span class="card-arrow">Explore &rarr;</span>
+    </a>
+
+    <a href="planets.html" class="nav-card">
+      <span class="card-num">03 &mdash; The Planets</span>
+      <h3>Proxima b, c &amp; d</h3>
+      <p>
+        Three worlds orbiting a single red dwarf: their masses, orbits,
+        formation, and how they compare to the planets we know.
+      </p>
+      <span class="card-arrow">Explore &rarr;</span>
+    </a>
+
+    <a href="habitability.html" class="nav-card">
+      <span class="card-num">04 &mdash; Habitability</span>
+      <h3>Could Life Survive?</h3>
+      <p>
+        A quantitative deep-dive into equilibrium temperature, habitable zone
+        boundaries, tidal locking, and atmospheric escape on Proxima b.
+      </p>
+      <span class="card-arrow">Explore &rarr;</span>
+    </a>
+
+    <a href="future.html" class="nav-card">
+      <span class="card-num">05 &mdash; The Future</span>
+      <h3>What Comes Next</h3>
+      <p>
+        From the ELT to Breakthrough Starshot: the telescopes and missions
+        that could one day image Proxima b directly.
+      </p>
+      <span class="card-arrow">Explore &rarr;</span>
+    </a>
+
+    <a href="references.html" class="nav-card">
+      <span class="card-num">06 &mdash; References</span>
+      <h3>Bibliography</h3>
+      <p>
+        Full citations for all data, figures, and claims used throughout this project.
+      </p>
+      <span class="card-arrow">View &rarr;</span>
+    </a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

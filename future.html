@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future | Proxima Centauri</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-progress"><div class="page-progress-bar"></div></div>
+
+<main>
+  <header class="page-header">
+    <p class="overline">05 &mdash; The Future</p>
+    <h1>What Comes Next</h1>
+    <p class="lead">
+      The telescopes and missions that could transform Proxima b from a data point
+      into a world we can actually characterize.
+    </p>
+  </header>
+
+  <div class="content">
+
+    <!-- Section: Direct Imaging -->
+    <section class="section" id="direct-imaging">
+      <h2>The Direct Imaging Challenge</h2>
+      <p>
+        Today, everything we know about Proxima b comes from indirect methods,
+        measuring the star's wobble to infer the planet's presence. The next frontier is
+        <strong>direct imaging</strong>: collecting photons from the planet itself, separate
+        from the overwhelming glare of the host star.
+      </p>
+      <p>
+        The angular separation between Proxima b and its star, as seen from Earth, is:
+      </p>
+
+      <div class="equation-block">
+        <span class="eq">
+          &theta; = a / d = 0.0485 AU / 1.301 pc &asymp; 0.037 arcseconds = 37 mas
+        </span>
+        <span class="eq-label">Angular separation of Proxima b from its star</span>
+      </div>
+
+      <p>
+        This is an extremely tight separation. The contrast ratio (planet flux vs. star flux)
+        is roughly 10<sup>&minus;7</sup> in the mid-infrared. Achieving both the angular
+        resolution and the contrast suppression needed to image Proxima b requires the
+        largest telescopes equipped with advanced coronagraphs and adaptive optics.
+      </p>
+
+      <div class="callout info">
+        <span class="callout-icon">&#9432;</span>
+        <div class="callout-body">
+          <strong>Lecture 10 Connection &mdash; Direct Imaging (Bonus)</strong>
+          <p>
+            Lecture 10 covered the principles of direct imaging: angular resolution
+            (&theta; &asymp; 1.22 &lambda;/D), coronagraphy to block starlight, and adaptive
+            optics to correct atmospheric blurring. The inner working angle of a coronagraph
+            determines the closest separation at which a planet can be detected. For Proxima b
+            at 37 mas, this is achievable with ELT-class telescopes at thermal infrared
+            wavelengths.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: ELT -->
+    <section class="section" id="elt">
+      <h2>The Extremely Large Telescope</h2>
+      <p>
+        The European Southern Observatory's <strong>Extremely Large Telescope</strong> (ELT),
+        currently under construction in Chile's Atacama Desert, will have a 39-meter primary
+        mirror, making it the largest optical/infrared telescope ever built. Its
+        diffraction limit at 10 &mu;m is about 53 mas, and at 3.5 &mu;m about 18 mas. This
+        means the ELT has the angular resolution to resolve Proxima b from its star at
+        mid-infrared wavelengths.
+      </p>
+      <p>
+        The ELT's planned mid-infrared instrument, <strong>METIS</strong> (Mid-infrared ELT
+        Imager and Spectrograph), includes a coronagraphic mode specifically designed for
+        high-contrast imaging of nearby exoplanets. Simulations suggest that METIS could detect
+        thermal emission from Proxima b in the N-band (~10 &mu;m) with a signal-to-noise ratio
+        sufficient for a clear detection, assuming favorable atmospheric
+        conditions<a href="references.html#quanz2015" class="cite">[13]</a>.
+      </p>
+      <p>
+        A detection in thermal emission would immediately constrain Proxima b's temperature and
+        provide the first direct evidence of whether the planet has a substantial atmosphere (an
+        atmosphere would redistribute heat, changing the planet's thermal emission profile
+        compared to a bare rock).
+      </p>
+    </section>
+
+    <!-- Section: JWST -->
+    <section class="section" id="jwst">
+      <h2>James Webb Space Telescope</h2>
+      <p>
+        JWST, launched in December 2021, is the most powerful space telescope ever deployed.
+        While its 6.5-meter mirror lacks the angular resolution to directly image Proxima b
+        (JWST's diffraction limit at 10 &mu;m is ~330 mas, far larger than the 37 mas
+        separation), JWST could contribute to characterizing the system in other ways.
+      </p>
+      <p>
+        If Proxima b transits (crosses in front of its star as seen from Earth), JWST's
+        spectrographs could perform <strong>transmission spectroscopy</strong>,
+        measuring the star's light filtered through the planet's atmosphere to identify
+        molecular absorption features. However, the transit probability for Proxima b is only
+        about 1.5% (due to its relatively wide orbit for transit geometry), and no transit has
+        been convincingly detected to date.
+      </p>
+      <p>
+        Even without transits, JWST may be able to measure the <strong>thermal phase curve</strong>
+        of Proxima b by tracking how the combined star+planet flux varies as the planet
+        orbits, revealing the temperature contrast between the planet's dayside and nightside.
+        This would provide constraints on heat redistribution and therefore on the presence and
+        thickness of an atmosphere.
+      </p>
+    </section>
+
+    <!-- Section: Breakthrough Starshot -->
+    <section class="section" id="starshot">
+      <h2>Breakthrough Starshot</h2>
+      <p>
+        The most ambitious proposal for studying Proxima Centauri is
+        <strong>Breakthrough Starshot</strong>, a privately funded initiative announced in
+        2016, the same year Proxima b was discovered. The concept: launch thousands of
+        ultra-lightweight spacecraft (gram-scale "StarChips") propelled by ground-based laser
+        arrays to 20% the speed of light. At that velocity, the fleet would reach Alpha/Proxima
+        Centauri in approximately 20 years.
+      </p>
+      <p>
+        Each StarChip would carry miniature cameras and instruments capable of taking close-up
+        images of Proxima b as it flies past. The data would be transmitted back to Earth via
+        onboard laser, arriving about 4.24 years later. The total mission time from launch to
+        data reception: roughly 24 years.
+      </p>
+      <p>
+        The engineering challenges are enormous: surviving the acceleration phase, navigating
+        interstellar dust at relativistic speeds, and building a laser array powerful enough to
+        push the sails. As of 2026, the project remains in the research and development phase,
+        but it represents the only plausible path to in-situ exploration of the Proxima system
+        within this century.
+      </p>
+    </section>
+
+    <!-- Section: What to look for -->
+    <section class="section" id="what-to-look-for">
+      <h2>What Would We Look For?</h2>
+      <p>
+        Whether through direct imaging from the ELT, thermal measurements from JWST, or
+        an interstellar flyby, the key observational goals for Proxima b are:
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-tag">Priority 1</span>
+          <h3>Does It Have an Atmosphere?</h3>
+          <p>
+            The single most important question. Thermal emission measurements can
+            distinguish between a bare rock (extreme day-night contrast) and an
+            atmosphere (heat redistribution). Spectral features in reflected or
+            emitted light would confirm atmospheric gases.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Priority 2</span>
+          <h3>What Is It Made Of?</h3>
+          <p>
+            Atmospheric spectroscopy could reveal CO<sub>2</sub>, H<sub>2</sub>O,
+            O<sub>2</sub>, O<sub>3</sub>, CH<sub>4</sub>, or other molecules.
+            The composition constrains the planet's geological activity, volatile
+            budget, and potential for biological processes.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">Priority 3</span>
+          <h3>Biosignatures</h3>
+          <p>
+            A simultaneous detection of O<sub>2</sub> and CH<sub>4</sub> (or
+            O<sub>3</sub> and N<sub>2</sub>O) would be difficult to explain
+            without biological activity. This would constitute the strongest
+            possible evidence for extraterrestrial life short of direct contact.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Closing -->
+    <section class="section" id="closing">
+      <h2>The Significance of Proximity</h2>
+      <p>
+        Proxima Centauri's location as the nearest star makes it uniquely valuable. Any
+        technique that works on Proxima b (direct imaging, thermal mapping,
+        spectroscopy) will be easier here than for any other known exoplanet of
+        comparable interest. It is the first domino: if we can characterize Proxima b's
+        atmosphere and surface conditions, the methods developed will extend to dozens
+        of other nearby rocky worlds.
+      </p>
+      <p>
+        In the span of a single decade (2016&ndash;2026), Proxima b went from unknown to one
+        of the most intensely studied planets in exoplanet science. The next decade,
+        with the ELT's first light anticipated and JWST entering its prime mission phase,
+        could transform it from a gravitational signal into a world we can truly begin to
+        understand.
+      </p>
+    </section>
+
+    <a href="references.html" class="next-page">
+      <div>
+        <span class="next-label">Next</span>
+        <span class="next-title">References &mdash; Bibliography</span>
+      </div>
+      <span class="next-arrow">&rarr;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

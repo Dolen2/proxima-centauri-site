@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Star | Proxima Centauri</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-progress"><div class="page-progress-bar"></div></div>
+
+<main>
+  <header class="page-header">
+    <p class="overline">01 &mdash; The Star</p>
+    <h1>Proxima Centauri</h1>
+    <p class="lead">
+      A cool, dim red dwarf just 4.24 light-years from Earth, the closest star
+      to our Sun and the anchor of the nearest known exoplanetary system.
+    </p>
+  </header>
+
+  <div class="content">
+
+    <!-- Section: What is Proxima? -->
+    <section class="section" id="overview">
+      <h2>The Closest Star</h2>
+      <p>
+        Proxima Centauri is a small M-type main-sequence star (spectral class M5.5Ve) located in
+        the constellation Centaurus. Despite being the nearest star to the Solar System, it is
+        far too faint to see with the naked eye, with an apparent magnitude of about 11.1. It was
+        discovered in 1915 by Robert Innes at the Union Observatory in Johannesburg, South Africa,
+        who recognized its exceptionally large proper motion across the sky<a href="references.html#innes1915" class="cite">[1]</a>.
+      </p>
+      <p>
+        Proxima is gravitationally bound to the Alpha Centauri binary system (Alpha Centauri A and B),
+        orbiting the pair at a projected separation of roughly 13,000 AU, so far out that one
+        orbit takes over half a million years<a href="references.html#kervella2017" class="cite">[2]</a>.
+        Together the three stars make up the closest stellar system to Earth.
+      </p>
+    </section>
+
+    <!-- Section: Stellar properties comparison -->
+    <section class="section" id="properties">
+      <h2>Stellar Properties</h2>
+      <p>
+        Proxima Centauri belongs to the most common class of stars in the Milky Way: M-dwarfs.
+        These red dwarfs account for roughly 70% of all stars in the galaxy, yet none are visible
+        to the unaided eye because they are so intrinsically faint. Understanding how Proxima
+        compares to our Sun is essential for evaluating whether its planets could support
+        conditions friendly to life.
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Sun</th>
+              <th>Proxima Centauri</th>
+              <th>Ratio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spectral Type</td>
+              <td>G2V</td>
+              <td>M5.5Ve</td>
+              <td class="text-muted">&mdash;</td>
+            </tr>
+            <tr>
+              <td>Mass</td>
+              <td class="num">1.00 M<sub>&odot;</sub></td>
+              <td class="num">0.122 M<sub>&odot;</sub></td>
+              <td class="num">12.2%</td>
+            </tr>
+            <tr>
+              <td>Radius</td>
+              <td class="num">1.00 R<sub>&odot;</sub></td>
+              <td class="num">0.154 R<sub>&odot;</sub></td>
+              <td class="num">15.4%</td>
+            </tr>
+            <tr>
+              <td>Luminosity</td>
+              <td class="num">1.00 L<sub>&odot;</sub></td>
+              <td class="num">0.0017 L<sub>&odot;</sub></td>
+              <td class="num">0.17%</td>
+            </tr>
+            <tr>
+              <td>Effective Temperature</td>
+              <td class="num">5,778 K</td>
+              <td class="num">3,042 K</td>
+              <td class="num">53%</td>
+            </tr>
+            <tr>
+              <td>Metallicity [Fe/H]</td>
+              <td class="num">0.00</td>
+              <td class="num">+0.21</td>
+              <td class="text-muted">&mdash;</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td class="num">~4.6 Gyr</td>
+              <td class="num">~4.85 Gyr</td>
+              <td class="text-muted">&mdash;</td>
+            </tr>
+            <tr>
+              <td>Distance from Earth</td>
+              <td class="num">1.0 AU</td>
+              <td class="num">4.24 ly (268,000 AU)</td>
+              <td class="text-muted">&mdash;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted" style="font-size:0.82rem; margin-top:0.5rem;">
+        Sources: Anglada-Escud&eacute; et al. (2016), Boyajian et al. (2012), Mann et al. (2015).
+      </p>
+    </section>
+
+    <!-- Section: Comparison visual -->
+    <section class="section" id="comparison">
+      <h2>Sun vs. Proxima: A Matter of Scale</h2>
+      <p>
+        The numbers in the table above can be difficult to intuit. Proxima Centauri has only
+        about 12% of the Sun's mass, 15% of its radius, and a mere 0.17% of its luminosity. If
+        you placed Proxima where the Sun is, Earth would receive roughly 600 times less light
+        than it does today, and our sky would be dominated by a dim, deep-red star rather than
+        the blazing yellow disk we know.
+      </p>
+
+      <!-- CSS size comparison -->
+      <div class="size-compare">
+        <div class="size-compare-item">
+          <div class="size-sphere sun"></div>
+          <span class="size-label">The Sun<br>R = 1.0 R<sub>&odot;</sub></span>
+        </div>
+        <div class="size-compare-item">
+          <div class="size-sphere proxima"></div>
+          <span class="size-label">Proxima Cen<br>R = 0.154 R<sub>&odot;</sub></span>
+        </div>
+        <div class="size-compare-item">
+          <div class="size-sphere earth"></div>
+          <span class="size-label">Earth<br>(for scale)</span>
+        </div>
+      </div>
+
+      <div class="comparison">
+        <div class="comparison-item">
+          <h4>The Sun</h4>
+          <span class="big-number" style="color: var(--accent-warm);">5,778 K</span>
+          <p>G2V &middot; Yellow dwarf<br>Main-sequence lifetime: ~10 Gyr</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Proxima Centauri</h4>
+          <span class="big-number">3,042 K</span>
+          <p>M5.5Ve &middot; Red dwarf<br>Main-sequence lifetime: ~4 trillion years</p>
+        </div>
+      </div>
+
+      <p>
+        One notable consequence of Proxima's low mass is its long lifespan. The Sun
+        will exhaust its core hydrogen fuel in roughly 10 billion years (it is about halfway
+        through now). An M-dwarf like Proxima burns through its hydrogen so slowly that it will
+        remain on the main sequence for trillions of years, far longer than the current age
+        of the universe (13.8 Gyr). In principle, a habitable planet orbiting such a star
+        would have an enormously long window of time for life to develop<a href="references.html#adams2005" class="cite">[3]</a>.
+      </p>
+    </section>
+
+    <!-- Section: M-dwarf context -->
+    <section class="section" id="mdwarfs">
+      <h2>M-Dwarfs in Context</h2>
+      <p>
+        Our Solar System orbits a G-type star, but the Sun is actually somewhat unusual.
+        The Milky Way contains an estimated 100&ndash;400 billion stars, and roughly 70% of
+        them are M-dwarfs like Proxima Centauri<a href="references.html#henry2006" class="cite">[4]</a>.
+        Because M-dwarfs are so common, understanding whether their planets can be habitable is
+        one of the central questions in exoplanet science today.
+      </p>
+      <p>
+        M-dwarfs differ from Sun-like stars in several ways that matter for planet habitability.
+        Their habitable zones are much closer in (because the star is so dim, a planet must orbit
+        nearby to receive enough warmth). This proximity creates challenges: the planet is more
+        likely to be <strong>tidally locked</strong> (one face always toward the star), and it is
+        exposed to intense <strong>stellar flares</strong> and <strong>high-energy radiation</strong>
+        that can strip away atmospheric gases over time.
+      </p>
+
+      <div class="callout info">
+        <span class="callout-icon">&#9432;</span>
+        <div class="callout-body">
+          <strong>Lecture 2 Connection &mdash; Solar System Overview</strong>
+          <p>
+            In Lecture 2 we cataloged the main properties of the Solar System: orbital
+            spacing, planet types, the habitable zone, and how our G-type host star shapes these
+            features. Proxima Centauri provides a useful counterpoint: an M-dwarf system where
+            the entire planetary architecture is compressed into a region smaller than Mercury's
+            orbit around the Sun.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Flare activity -->
+    <section class="section" id="flares">
+      <h2>Stellar Activity and Flares</h2>
+      <p>
+        Proxima Centauri is classified as a <strong>flare star</strong> (variable type UV Ceti).
+        It exhibits frequent, powerful flares that can temporarily increase its brightness by
+        several times across UV and X-ray wavelengths. In March 2016, a superflare was observed
+        that briefly made Proxima roughly 68 times brighter in the far-UV than its quiescent
+        state<a href="references.html#howard2018" class="cite">[5]</a>.
+      </p>
+      <p>
+        This flare activity is driven by Proxima's strong magnetic field. M-dwarfs are
+        fully or largely convective, meaning their interiors churn like a boiling pot from
+        core to surface, which generates powerful, tangled magnetic fields. These fields
+        store energy that is periodically released as flares.
+      </p>
+      <p>
+        For any planet orbiting close to Proxima, these flares represent a serious environmental
+        hazard. Each burst delivers a pulse of extreme ultraviolet (XUV) radiation and energetic
+        particles. Over billions of years, this bombardment could erode a planet's atmosphere
+        through a process called <strong>atmospheric sputtering</strong>. Whether Proxima b can
+        retain a substantial atmosphere despite this onslaught is one of the most active questions
+        in the field, and we explore it in detail on the
+        <a href="habitability.html" style="color: var(--accent);">Habitability</a> page.
+      </p>
+    </section>
+
+    <!-- Section: Why Proxima matters -->
+    <section class="section" id="significance">
+      <h2>Why Proxima Matters</h2>
+      <p>
+        Proxima Centauri's importance extends beyond its proximity. It represents the
+        most accessible laboratory for studying planets around the most common type of
+        star in the galaxy. Because it is so close, Proxima's planets are among the
+        best candidates for future direct imaging and atmospheric characterization with
+        next-generation telescopes like the Extremely Large Telescope (ELT).
+      </p>
+      <p>
+        In the broader context of exoplanet science, Proxima Centauri connects several
+        of the themes explored in this course: the physics of stellar structure and how
+        it determines what kinds of planets can form, the observational techniques that
+        reveal those planets, and the conditions that govern whether a rocky world
+        could be a place where life might take hold.
+      </p>
+    </section>
+
+    <a href="discovery.html" class="next-page">
+      <div>
+        <span class="next-label">Next</span>
+        <span class="next-title">Finding the Planets &mdash; The Radial Velocity Method</span>
+      </div>
+      <span class="next-arrow">&rarr;</span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

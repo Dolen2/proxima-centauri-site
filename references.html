@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>References | Proxima Centauri</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ref-list {
+      list-style: none;
+      counter-reset: ref;
+    }
+    .ref-list li {
+      counter-increment: ref;
+      margin-bottom: 1.25rem;
+      padding-left: 2.5rem;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+    .ref-list li::before {
+      content: "[" counter(ref) "]";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .ref-list li em {
+      font-style: italic;
+    }
+    .ref-list li a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .ref-list li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Proxima <span>Centauri</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="star.html">The Star</a></li>
+      <li><a href="discovery.html">Discovery</a></li>
+      <li><a href="planets.html">The Planets</a></li>
+      <li><a href="habitability.html">Habitability</a></li>
+      <li><a href="future.html">Future</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="page-header">
+    <p class="overline">06 &mdash; References</p>
+    <h1>Bibliography</h1>
+    <p class="lead">
+      Full citations for all data, figures, and claims used throughout this project.
+    </p>
+  </header>
+
+  <div class="content">
+
+    <section class="section">
+      <h2>Works Cited</h2>
+
+      <ol class="ref-list">
+        <li id="innes1915">
+          Innes, R. T. A. (1915).
+          "A faint star of large proper motion."
+          <em>Circular of the Union Observatory</em>, No. 30, 235&ndash;236.
+        </li>
+
+        <li id="kervella2017">
+          Kervella, P., Th&eacute;venin, F., &amp; Lovis, C. (2017).
+          "Proxima's orbit around Alpha Centauri."
+          <em>Astronomy &amp; Astrophysics</em>, 598, L7.
+          <a href="https://doi.org/10.1051/0004-6361/201629930">doi:10.1051/0004-6361/201629930</a>
+        </li>
+
+        <li id="adams2005">
+          Adams, F. C., &amp; Laughlin, G. (2005).
+          "Constraints on the birth aggregate of the Solar System."
+          <em>Icarus</em>, 150(1), 151&ndash;162.
+          Note: M-dwarf lifetimes discussed in Adams, F. C., Bodenheimer, P., &amp; Laughlin, G. (2005),
+          "M dwarfs: planet formation and long term evolution," <em>Astronomische Nachrichten</em>, 326, 913.
+        </li>
+
+        <li id="henry2006">
+          Henry, T. J., Jao, W.-C., Subasavage, J. P., et al. (2006).
+          "The Solar Neighborhood. XVII. Parallax Results from the CTIOPI 0.9 m Program."
+          <em>The Astronomical Journal</em>, 132(6), 2360.
+          <a href="https://doi.org/10.1086/508233">doi:10.1086/508233</a>
+        </li>
+
+        <li id="howard2018">
+          Howard, W. S., Tilley, M. A., Corbett, H., et al. (2018).
+          "The First Naked-eye Superflare Detected from Proxima Centauri."
+          <em>The Astrophysical Journal Letters</em>, 860(2), L30.
+          <a href="https://doi.org/10.3847/2041-8213/aacaf3">doi:10.3847/2041-8213/aacaf3</a>
+        </li>
+
+        <li id="anglada2016">
+          Anglada-Escud&eacute;, G., Amado, P. J., Barnes, J., et al. (2016).
+          "A terrestrial planet candidate in a temperate orbit around Proxima Centauri."
+          <em>Nature</em>, 536(7617), 437&ndash;440.
+          <a href="https://doi.org/10.1038/nature19106">doi:10.1038/nature19106</a>
+        </li>
+
+        <li id="damasso2020">
+          Damasso, M., Del Sordo, F., Anglada-Escud&eacute;, G., et al. (2020).
+          "A low-mass planet candidate orbiting Proxima Centauri at a distance of 1.5 AU."
+          <em>Science Advances</em>, 6(3), eaax7467.
+          <a href="https://doi.org/10.1126/sciadv.aax7467">doi:10.1126/sciadv.aax7467</a>
+        </li>
+
+        <li id="faria2022">
+          Faria, J. P., Suarez Mascare&ntilde;o, A., Figueira, P., et al. (2022).
+          "A candidate short-period sub-Earth orbiting Proxima Centauri."
+          <em>Astronomy &amp; Astrophysics</em>, 658, A115.
+          <a href="https://doi.org/10.1051/0004-6361/202142337">doi:10.1051/0004-6361/202142337</a>
+        </li>
+
+        <li id="kopparapu2013">
+          Kopparapu, R. K., Ramirez, R., Kasting, J. F., et al. (2013).
+          "Habitable Zones around Main-sequence Stars: New Estimates."
+          <em>The Astrophysical Journal</em>, 765(2), 131.
+          <a href="https://doi.org/10.1088/0004-637X/765/2/131">doi:10.1088/0004-637X/765/2/131</a>
+        </li>
+
+        <li id="gladman1996">
+          Gladman, B., Quinn, D. D., Nicholson, P., &amp; Rand, R. (1996).
+          "Synchronous Locking of Tidally Evolving Satellites."
+          <em>Icarus</em>, 122(1), 166&ndash;192.
+          <a href="https://doi.org/10.1006/icar.1996.0117">doi:10.1006/icar.1996.0117</a>
+        </li>
+
+        <li id="turbet2016">
+          Turbet, M., Leconte, J., Selsis, F., et al. (2016).
+          "The habitability of Proxima Centauri b. II. Possible climates and
+          observability."
+          <em>Astronomy &amp; Astrophysics</em>, 596, A112.
+          <a href="https://doi.org/10.1051/0004-6361/201629577">doi:10.1051/0004-6361/201629577</a>
+        </li>
+
+        <li id="ribas2016">
+          Ribas, I., Bolmont, E., Selsis, F., et al. (2016).
+          "The habitability of Proxima Centauri b. I. Irradiation, rotation and
+          volatile inventory from formation to the present."
+          <em>Astronomy &amp; Astrophysics</em>, 596, A111.
+          <a href="https://doi.org/10.1051/0004-6361/201629576">doi:10.1051/0004-6361/201629576</a>
+        </li>
+
+        <li id="quanz2015">
+          Quanz, S. P., Crossfield, I., Meyer, M. R., Schmalzl, E., &amp; Held, J. (2015).
+          "Direct detection of exoplanets in the 3&ndash;10 &mu;m range with E-ELT/METIS."
+          <em>International Journal of Astrobiology</em>, 14(2), 279&ndash;289.
+          <a href="https://doi.org/10.1017/S1473550414000135">doi:10.1017/S1473550414000135</a>
+        </li>
+
+        <li id="boyajian2012">
+          Boyajian, T. S., von Braun, K., van Belle, G., et al. (2012).
+          "Stellar Diameters and Temperatures. II. Main-sequence K- and M-stars."
+          <em>The Astrophysical Journal</em>, 757(2), 112.
+          <a href="https://doi.org/10.1088/0004-637X/757/2/112">doi:10.1088/0004-637X/757/2/112</a>
+        </li>
+
+        <li id="mann2015">
+          Mann, A. W., Feiden, G. A., Gaidos, E., Boyajian, T., &amp; von Braun, K. (2015).
+          "How to Constrain Your M Dwarf: Measuring Effective Temperature, Bolometric
+          Luminosity, Mass, and Radius."
+          <em>The Astrophysical Journal</em>, 804(1), 64.
+          <a href="https://doi.org/10.1088/0004-637X/804/1/64">doi:10.1088/0004-637X/804/1/64</a>
+        </li>
+
+        <li id="suarez2020">
+          Su&aacute;rez Mascare&ntilde;o, A., Faria, J. P., Figueira, P., et al. (2020).
+          "Revisiting Proxima with ESPRESSO."
+          <em>Astronomy &amp; Astrophysics</em>, 639, A77.
+          <a href="https://doi.org/10.1051/0004-6361/202037745">doi:10.1051/0004-6361/202037745</a>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>Course Material</h2>
+      <p>
+        This project synthesizes material from the following lectures in ASTR/PHSC 12720,
+        Spring 2026, taught at The University of Chicago:
+      </p>
+      <ul style="color: var(--text-secondary); margin-left: 1.5rem; list-style: disc; line-height: 2;">
+        <li>Lecture 2 &mdash; Solar System Overview (star comparison, system architecture)</li>
+        <li>Lectures 6 &amp; 7 &mdash; Radial Velocities (discovery method, RV equation, m sin i)</li>
+        <li>Lecture 10 &mdash; Direct Imaging (angular resolution, coronagraphy, future prospects)</li>
+        <li>Lecture 14 &mdash; Planet Formation (nebular hypothesis, core accretion, migration)</li>
+        <li>Lecture 16 &mdash; Planet Atmospheres (atmospheric escape mechanisms, XUV erosion)</li>
+        <li>Lecture 17 &mdash; Habitability and Biosignatures (habitable zone, tidal locking, biosignatures)</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dolen Hedrick &middot; ASTR/PHSC 12720 &middot; Spring 2026</p>
+    <p class="text-muted">The University of Chicago</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
